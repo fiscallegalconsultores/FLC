@@ -1,0 +1,139 @@
+/* style.css - FLC Abogados Tributarios */
+/* Paleta: Azul Marino (#0A192F), Rojo (#C41E3A), Blanco (#FFFFFF) */
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+}
+
+/* Colores personalizados Tailwind */
+.bg-navy-900 { background-color: #0A192F; }
+.bg-navy-800 { background-color: #112240; }
+.text-navy-900 { color: #0A192F; }
+.border-navy-900 { border-color: #0A192F; }
+
+.bg-red-700 { background-color: #C41E3A; }
+.bg-red-800 { background-color: #A01830; }
+.bg-red-900 { background-color: #8B1528; }
+.text-red-700 { color: #C41E3A; }
+.text-red-600 { color: #D42A4A; }
+.text-red-400 { color: #E85A74; }
+.border-red-700 { border-color: #C41E3A; }
+
+/* Hover states */
+.hover\:bg-red-800:hover { background-color: #A01830; }
+.hover\:text-red-600:hover { color: #D42A4A; }
+.hover\:text-red-400:hover { color: #E85A74; }
+.hover\:border-red-700:hover { border-color: #C41E3A; }
+
+/* Focus states */
+.focus\:ring-red-700:focus { --tw-ring-color: #C41E3A; }
+
+/* Botones */
+.btn-red {
+    background: linear-gradient(135deg, #C41E3A 0%, #A01830 100%);
+    transition: all 0.3s ease;
+}
+
+.btn-red:hover {
+    background: linear-gradient(135deg, #A01830 0%, #8B1528 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(196, 30, 58, 0.3);
+}
+
+/* Accordion */
+.accordion-content {
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.accordion-content.active {
+    max-height: 600px;
+    opacity: 1;
+}
+
+/* Cards */
+.card-hover { 
+    transition: all 0.3s ease; 
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(10, 25, 47, 0.25);
+}
+
+/* Partner Cards */
+.partner-card { 
+    transition: all 0.3s ease; 
+}
+
+.partner-card:hover {
+    border-color: #C41E3A;
+    box-shadow: 0 20px 25px -5px rgba(10, 25, 47, 0.2);
+}
+
+/* Rotación */
+.rotate-180 { 
+    transform: rotate(180deg); 
+    transition: transform 0.3s ease;
+}
+
+/* Fade-in animation */
+.fade-in { 
+    animation: fadeIn 0.6s ease-out; 
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #0A192F 0%, #C41E3A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A192F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C41E3A;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A01830;
+}
+
+/* Selection color */
+::selection {
+    background: #C41E3A;
+    color: #FFFFFF;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .accordion-content.active {
+        max-height: 400px;
+    }
+}
