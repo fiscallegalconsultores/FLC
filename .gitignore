@@ -1,0 +1,51 @@
+# ================================
+# FLC Abogados Tributarios - .gitignore
+# ================================
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores de código y IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de entorno y configuración local
+.env
+.env.local
+*.log
+
+# Dependencias (si en el futuro usas Node.js)
+node_modules/
+package-lock.json
+yarn-error.log
+
+# Archivos de compilación o build (no aplican ahora, pero por precaución)
+dist/
+build/
+*.min.css
+*.min.js
+
+# Archivos temporales del navegador
+*.cache
+.tmp/
+
+# Imágenes de respaldo o edición
+*.psd
+*.ai
+*.sketch
+*.xd
+
+# Documentos de oficina (no subir al repo)
+*.docx
+*.xlsx
+*.pptx
+
+# Backups locales
+*.bak
+*.old
+backup/
