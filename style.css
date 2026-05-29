@@ -1,41 +1,35 @@
 /* ========================================
    FLC Abogados Tributarios - style.css
-   Complementos para Tailwind CSS
-   Tema: Premium Legal/Fiscal (Navy & Gold)
    ======================================== */
 
-/* Animaciones personalizadas */
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+/* Animaciones */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-.animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+.animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+
+/* Botón Dorado */
+.btn-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #B89628 100%);
 }
 
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+.btn-gold:hover {
+    background: linear-gradient(135deg, #B89628 0%, #A3851F 100%);
+    transform: translateY(-1px);
 }
 
-/* FAQ Accordion Transitions */
+/* FAQ Accordion */
 .faq-content {
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
     max-height: 0;
@@ -54,12 +48,23 @@
     transform: rotate(180deg);
 }
 
-/* Smooth Scroll Offset para navbar sticky */
-html {
-    scroll-padding-top: 100px;
+/* Aspect Ratio */
+.aspect-w-4 {
+    position: relative;
+    padding-bottom: 75%;
 }
 
-/* Custom Scrollbar */
+.aspect-w-4 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Scrollbar personalizado */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -77,70 +82,22 @@ html {
     background: #B89628;
 }
 
-/* Selection Color */
+/* Selection */
 ::selection {
     background: #D4AF37;
     color: #FFFFFF;
 }
 
-/* Focus Visible para accesibilidad */
-:focus-visible {
-    outline: 2px solid #D4AF37;
-    outline-offset: 2px;
-}
-
-/* Aspect Ratio Utility (para soporte antiguo) */
-.aspect-w-4 {
-    position: relative;
-    padding-bottom: 75%; /* 4:3 aspect ratio */
-}
-
-.aspect-w-4 > * {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-/* Responsive ajustes para animaciones */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* Mobile adjustments */
+/* Responsive */
 @media (max-width: 768px) {
     .faq-content.active {
         max-height: 400px;
     }
-    
-    html {
-        scroll-padding-top: 80px;
-    }
 }
 
-/* Print styles */
+/* Print */
 @media print {
-    nav, footer, .faq-trigger i, button {
+    nav, footer, .faq-trigger i, button, .fixed {
         display: none;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-    
-    a {
-        text-decoration: none;
-        color: #0F172A;
     }
 }
