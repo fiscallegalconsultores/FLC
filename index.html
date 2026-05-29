@@ -3,263 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FLC Abogados Tributarios - Consultoría fiscal especializada en defensa tributaria, devoluciones ISR/IVA, EFOS/EDOS y planeación fiscal estratégica.">
-    <meta name="keywords" content="abogados tributarios, fiscal, SAT, devoluciones IVA, EFOS EDOS, consultoría fiscal, defensa fiscal">
     <title>FLC Abogados Tributarios | Consultoría Fiscal Especializada</title>
-    <link rel="icon" type="image/jpeg" href="img/socios/FLC.jpeg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="cs/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#F59E0B',
+                            500: '#D4AF37', // Dorado original
+                            600: '#B89628',
+                        },
+                        slate: {
+                            800: '#1e293b',
+                            900: '#0f172a', // Azul marino original
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 font-sans antialiased">
 
-    <!-- Header -->
-    <header class="bg-navy-900 text-white sticky top-0 z-50 shadow-lg">
-        <nav class="container mx-auto px-6 py-4">
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl border-b-2 border-gold-500">
+        <nav class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
+                <!-- LOGO: FLC.jpeg integrado aquí -->
                 <a href="#inicio" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
-                    <img src="img/socios/FLC.jpeg" alt="FLC Abogados Tributarios" class="h-12 w-auto object-contain">
+                    <img src="img/socios/FLC.jpeg" alt="Logo FLC" class="h-14 w-auto object-contain">
                 </a>
                 
-                <!-- Desktop Menu -->
+                <!-- Menú Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#inicio" class="hover:text-red-600 transition-colors font-medium">Inicio</a>
-                    <a href="#servicios" class="hover:text-red-600 transition-colors font-medium">Servicios</a>
-                    <a href="#equipo" class="hover:text-red-600 transition-colors font-medium">Equipo</a>
-                    <a href="#actualidad" class="hover:text-red-600 transition-colors font-medium">Actualidad</a>
-                    <a href="#contacto" class="hover:text-red-600 transition-colors font-medium">Contacto</a>
-                    <a href="#contacto" class="bg-red-700 hover:bg-red-800 text-white px-6 py-2 rounded-lg font-semibold transition-all transform hover:scale-105">
+                    <a href="#inicio" class="hover:text-gold-400 transition-colors font-medium">Inicio</a>
+                    <a href="#servicios" class="hover:text-gold-400 transition-colors font-medium">Servicios</a>
+                    <a href="#equipo" class="hover:text-gold-400 transition-colors font-medium">Equipo</a>
+                    <a href="#actualidad" class="hover:text-gold-400 transition-colors font-medium">Actualidad</a>
+                    <a href="#contacto" class="hover:text-gold-400 transition-colors font-medium">Contacto</a>
+                    <a href="#contacto" class="btn-gold px-6 py-2 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
                         Agendar Asesoría
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-2xl focus:outline-none">
+                <!-- Botón Móvil -->
+                <button id="mobile-menu-button" class="md:hidden text-2xl focus:outline-none text-gold-400">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-                <a href="#inicio" class="block hover:text-red-600 transition-colors">Inicio</a>
-                <a href="#servicios" class="block hover:text-red-600 transition-colors">Servicios</a>
-                <a href="#equipo" class="block hover:text-red-600 transition-colors">Equipo</a>
-                <a href="#actualidad" class="block hover:text-red-600 transition-colors">Actualidad</a>
-                <a href="#contacto" class="block hover:text-red-600 transition-colors">Contacto</a>
-                <a href="#contacto" class="block bg-red-700 hover:bg-red-800 text-white px-6 py-2 rounded-lg font-semibold text-center">
+            <!-- Menú Móvil -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3 bg-slate-800 p-4 rounded-lg">
+                <a href="#inicio" class="block hover:text-gold-400 transition-colors">Inicio</a>
+                <a href="#servicios" class="block hover:text-gold-400 transition-colors">Servicios</a>
+                <a href="#equipo" class="block hover:text-gold-400 transition-colors">Equipo</a>
+                <a href="#actualidad" class="block hover:text-gold-400 transition-colors">Actualidad</a>
+                <a href="#contacto" class="block hover:text-gold-400 transition-colors">Contacto</a>
+                <a href="#contacto" class="block btn-gold text-center px-6 py-2 rounded-lg font-semibold mt-4">
                     Agendar Asesoría
                 </a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-red-900 text-white py-20 md:py-32 overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-        </div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center fade-in">
-                <div class="mb-8">
-                    <img src="img/socios/FLC.jpeg" alt="FLC Abogados Tributarios" class="h-24 md:h-32 w-auto mx-auto object-contain mb-6">
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    Consultoría Fiscal<br>
-                    <span class="text-red-500">Especializada</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-200">
-                    Estrategia tributaria integral, defensa especializada y cumplimiento normativo para proteger y optimizar el patrimonio de su empresa con rigor técnico y legal.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contacto" class="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-xl">
-                        Agendar Diagnóstico Fiscal
-                    </a>
-                    <a href="#servicios" class="bg-white hover:bg-gray-100 text-navy-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-xl">
-                        Explorar Servicios <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Oficinas Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Oficina Contable -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-                    <div class="h-64 overflow-hidden">
-                        <img src="img/socios/oficina1.jpeg" alt="Oficina Contable FLC" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-red-700 text-white p-3 rounded-lg mr-4">
-                                <i class="fas fa-calculator text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-navy-900">Área Contable</h3>
-                                <p class="text-gray-600">Contabilidad Forense y Auditorías</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            Análisis exhaustivo de su situación tributaria, devoluciones ISR/IVA y diagnóstico fiscal integral con enfoque preventivo.
-                        </p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li><i class="fas fa-check text-red-700 mr-2"></i>Contabilidad Forense</li>
-                            <li><i class="fas fa-check text-red-700 mr-2"></i>Devoluciones ISR/IVA</li>
-                            <li><i class="fas fa-check text-red-700 mr-2"></i>Auditorías Fiscales</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Oficina Legal -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-                    <div class="h-64 overflow-hidden">
-                        <img src="img/socios/oficina2.jpeg" alt="Oficina Legal FLC" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-red-700 text-white p-3 rounded-lg mr-4">
-                                <i class="fas fa-gavel text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-navy-900">Área Legal</h3>
-                                <p class="text-gray-600">Defensa Fiscal y Litigio Estratégico</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            Defensa especializada ante el SAT, juicios de nulidad, amparo fiscal y representación en procedimientos legales.
-                        </p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li><i class="fas fa-check text-red-700 mr-2"></i>Litigio Fiscal</li>
-                            <li><i class="fas fa-check text-red-700 mr-2"></i>Juicio de Nulidad</li>
-                            <li><i class="fas fa-check text-red-700 mr-2"></i>PRODECON</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios Section -->
-    <section id="servicios" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-navy-900 mb-4">Nuestras Áreas de Práctica</h2>
-                <div class="w-24 h-1 bg-red-700 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Soluciones integrales en materia fiscal, diseñadas para proteger, optimizar y defender el patrimonio de su empresa ante autoridades tributarias.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Servicio 1 -->
-                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border-2 border-transparent hover:border-red-700">
-                    <div class="bg-red-700 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-4">Consultoría y Planeación Fiscal</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Diagnóstico Fiscal Integral</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Planeación Fiscal Estratégica</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Optimización Tributaria</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Opiniones y Criterios Fiscales</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 2 -->
-                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border-2 border-transparent hover:border-red-700">
-                    <div class="bg-red-700 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-4">Defensa Fiscal y Controversia</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Atención de Auditorías SAT</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Recursos Administrativos</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Juicio de Nulidad y Amparo</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Defensa contra Créditos Fiscales</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 3 -->
-                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border-2 border-transparent hover:border-red-700">
-                    <div class="bg-red-700 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-4">Devoluciones y Compensaciones</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Recuperación de Saldos a Favor</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Trámite y Seguimiento</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Atención de Requerimientos</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Compensaciones Fiscales</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 4 -->
-                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border-2 border-transparent hover:border-red-700">
-                    <div class="bg-red-700 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-4">EFOS / EDOS y Riesgo Fiscal</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Defensa Art. 69-B CFF</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Análisis de Proveedores</li>
-                        <li><i class="fas fa-chevron-right text-red-700 mr-2 text-sm"></i>Prevención de Riesgos</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- CTA EFOS -->
-            <div class="mt-16 bg-gradient-to-r from-red-700 to-red-900 rounded-2xl p-8 md:p-12 text-center text-white fade-in">
-                <h3 class="text-3xl font-bold mb-4">¿Protección urgente ante listados del Art. 69-B del Código Fiscal de la Federación?</h3>
-                <p class="text-xl mb-8 opacity-90">Estrategia integral para desvirtuar presunciones de operaciones inexistentes y evitar inclusión en listados.</p>
-                <a href="#contacto" class="inline-block bg-white text-red-700 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-xl">
-                    Solicitar Evaluación de Riesgo Urgente
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
+        <!-- Fondo decorativo -->
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in">
+                Consultoría Fiscal <span class="text-gold-500">Especializada</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 text-gray-300 max-w-3xl mx-auto fade-in">
+                Estrategia tributaria integral, defensa especializada y cumplimiento normativo para proteger el patrimonio de su empresa con rigor técnico y legal.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="#contacto" class="btn-gold px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition-transform hover:scale-105">
+                    Agendar Diagnóstico Fiscal
+                </a>
+                <a href="#servicios" class="border-2 border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-all">
+                    Explorar Servicios
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Equipo Section -->
-    <section id="equipo" class="py-20 bg-gray-50">
+    <!-- NUEVA SECCIÓN: ÁREAS DE ESPECIALIZACIÓN (Oficina 1 y 2) -->
+    <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-navy-900 mb-4">Nuestro Equipo</h2>
-                <div class="w-24 h-1 bg-red-700 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Profesionales con Visión 360° - Un equipo multidisciplinario que combina experiencia operativa, litigio estratégico y cumplimiento normativo.
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Nuestras Áreas de Especialización</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Combinamos el rigor contable con la defensa jurídica para ofrecer una protección integral.
                 </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- OFICINA 1: Área Contable -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden group fade-in">
+                    <div class="h-72 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-slate-900 opacity-20 group-hover:opacity-10 transition-opacity z-10"></div>
+                        <img src="img/socios/oficina1.jpeg" alt="Área Contable FLC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 relative z-20 bg-white -mt-6 mx-4 rounded-xl shadow-lg border-t-4 border-gold-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gold-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-calculator text-gold-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-800">Área Contable</h3>
+                                <p class="text-gold-600 font-semibold">Contabilidad y Estrategia Fiscal</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Especialistas en contabilidad forense, auditorías fiscales y recuperación de saldos a favor (ISR/IVA). Optimizamos la salud financiera de su empresa con precisión técnica.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Auditorías y Revisión de Gabinete</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Contabilidad Forense</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Devoluciones y Compensaciones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- OFICINA 2: Área Legal -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden group fade-in">
+                    <div class="h-72 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-slate-900 opacity-20 group-hover:opacity-10 transition-opacity z-10"></div>
+                        <img src="img/socios/oficina2.jpeg" alt="Área Legal FLC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 relative z-20 bg-white -mt-6 mx-4 rounded-xl shadow-lg border-t-4 border-gold-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gold-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-gavel text-gold-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-800">Área Legal</h3>
+                                <p class="text-gold-600 font-semibold">Litigio y Defensa Fiscal</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Defensa experta ante el SAT y tribunales. Gestionamos juicios de nulidad, amparos y controversias fiscales para proteger su patrimonio de resoluciones indebidas.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Juicios de Nulidad y Amparo</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Defensa Art. 69-B CFF</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Acuerdos Conclusivos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS SECTION -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Nuestras Áreas de Práctica</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Soluciones integrales diseñadas para proteger, optimizar y defender el patrimonio de su empresa.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border border-gray-100 hover:border-gold-500">
+                    <div class="bg-gold-500 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl shadow-md">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Consultoría y Planeación</h3>
+                    <ul class="space-y-3 text-gray-700 text-sm">
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Diagnóstico Fiscal Integral</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Planeación Estratégica</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Optimización Tributaria</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border border-gray-100 hover:border-gold-500">
+                    <div class="bg-gold-500 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl shadow-md">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Defensa Fiscal</h3>
+                    <ul class="space-y-3 text-gray-700 text-sm">
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Auditorías SAT</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Recursos de Revocación</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Juicio de Nulidad</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border border-gray-100 hover:border-gold-500">
+                    <div class="bg-gold-500 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl shadow-md">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Devoluciones</h3>
+                    <ul class="space-y-3 text-gray-700 text-sm">
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Recuperación Saldo a Favor</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Trámite y Seguimiento</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Compensaciones</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover fade-in border border-gray-100 hover:border-gold-500">
+                    <div class="bg-gold-500 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl shadow-md">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">EFOS / EDOS</h3>
+                    <ul class="space-y-3 text-gray-700 text-sm">
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Defensa Art. 69-B</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Análisis de Proveedores</li>
+                        <li><i class="fas fa-chevron-right text-gold-500 mr-2"></i>Prevención de Riesgos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO SECTION -->
+    <section id="equipo" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Nuestro Equipo</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mb-6"></div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Socio 1 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg partner-card fade-in">
-                    <div class="h-80 overflow-hidden bg-gray-200">
-                        <img src="img/socios/cerbon-israel.jpg" alt="C.P. Jose Israel Cerbon Peña" class="w-full h-full object-cover">
+                    <div class="h-64 overflow-hidden bg-gray-200">
+                        <img src="img/socios/cerbon-israel.jpg" alt="C.P. Jose Israel Cerbon" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-navy-900 mb-1">C.P. Jose Israel Cerbon Peña</h3>
-                        <p class="text-red-700 font-semibold text-sm mb-3">Contador Público | Especialista en Derecho Fiscal | Socio Fundador</p>
-                        <p class="text-gray-600 text-sm mb-4">Cédula Profesional: [Por asignar]</p>
-                        <p class="text-gray-700 text-sm mb-4">
-                            Especialista en Contabilidad Forense, Peritajes Contables y Auditorías Fiscales. Ex-SAT (2005–2023).
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">C.P. Jose Israel Cerbon</h3>
+                        <p class="text-gold-600 font-semibold text-xs mb-3 uppercase">Socio Fundador | Derecho Fiscal</p>
+                        <p class="text-gray-600 text-xs mb-4">
+                            Especialista en Contabilidad Forense y Auditorías. Ex-SAT (2005–2023).
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Contabilidad Forense</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Devoluciones ISR/IVA</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Derecho Fiscal</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Contabilidad Forense</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Devoluciones</span>
                         </div>
                         <div class="space-y-2">
-                            <a href="mailto:cerbonisrael@gmail.com" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-envelope w-5 mr-2"></i>
-                                cerbonisrael@gmail.com
+                            <a href="mailto:cerbonisrael@gmail.com" class="flex items-center text-gray-500 hover:text-gold-600 text-xs transition-colors">
+                                <i class="fas fa-envelope w-4 mr-2"></i> cerbonisrael@gmail.com
                             </a>
-                            <a href="tel:+525564045881" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-phone w-5 mr-2"></i>
-                                55-64-04-58-81
+                            <a href="tel:+525564045881" class="flex items-center text-gray-500 hover:text-gold-600 text-xs transition-colors">
+                                <i class="fas fa-phone w-4 mr-2"></i> 55-64-04-58-81
                             </a>
                         </div>
                     </div>
@@ -267,89 +273,71 @@
 
                 <!-- Socio 2 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg partner-card fade-in">
-                    <div class="h-80 overflow-hidden bg-gray-200">
-                        <img src="img/socios/pedroza-carlos.jpg" alt="Lic. Carlos Eduardo Pedroza" class="w-full h-full object-cover">
+                    <div class="h-64 overflow-hidden bg-gray-200">
+                        <img src="img/socios/pedroza-carlos.jpg" alt="Lic. Carlos Pedroza" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-navy-900 mb-1">Lic. Carlos Eduardo Pedroza</h3>
-                        <p class="text-red-700 font-semibold text-sm mb-3">Licenciado en Derecho | Especialista en Litigio Fiscal | Socio Fundador</p>
-                        <p class="text-gray-600 text-sm mb-4">Cédula Profesional: [Por asignar]</p>
-                        <p class="text-gray-700 text-sm mb-4">
-                            Especialista en Defensa Fiscal, Litigio Constitucional, Juicios de Nulidad ante el TFJA y PRODECON.
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Lic. Carlos Pedroza</h3>
+                        <p class="text-gold-600 font-semibold text-xs mb-3 uppercase">Socio Fundador | Litigio</p>
+                        <p class="text-gray-600 text-xs mb-4">
+                            Especialista en Defensa Fiscal y Juicios de Nulidad ante el TFJA.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Litigio Fiscal</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Juicio de Nulidad</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">PRODECON</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Litigio Fiscal</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Amparo</span>
                         </div>
                         <div class="space-y-2">
-                            <a href="mailto:cpedrozabogado@outlook.com" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-envelope w-5 mr-2"></i>
-                                cpedrozabogado@outlook.com
+                            <a href="mailto:cpedrozabogado@outlook.com" class="flex items-center text-gray-500 hover:text-gold-600 text-xs transition-colors">
+                                <i class="fas fa-envelope w-4 mr-2"></i> cpedrozabogado@outlook.com
                             </a>
-                            <a href="tel:+525518096806" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-phone w-5 mr-2"></i>
-                                55-18-09-68-06
+                            <a href="https://wa.me/5215518096806" class="flex items-center text-gray-500 hover:text-gold-600 text-xs transition-colors">
+                                <i class="fab fa-whatsapp w-4 mr-2"></i> +52 55-18-09-68-06
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Socio 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg partner-card fade-in">
-                    <div class="h-80 overflow-hidden bg-gray-200">
-                        <img src="img/socios/socio3.jpg" alt="Lic. Alejandro Antonio Gutiérrez" class="w-full h-full object-cover">
+                 <!-- Socio 3 -->
+                 <div class="bg-white rounded-xl overflow-hidden shadow-lg partner-card fade-in">
+                    <div class="h-64 overflow-hidden bg-gray-200">
+                        <img src="img/socios/socio3.jpg" alt="Lic. Alejandro Gutiérrez" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-navy-900 mb-1">Lic. Alejandro Antonio Gutiérrez</h3>
-                        <p class="text-red-700 font-semibold text-sm mb-3">Licenciado en Derecho | Especialista en Derecho Penal Fiscal</p>
-                        <p class="text-gray-600 text-sm mb-4">Cédula Profesional: [Por asignar]</p>
-                        <p class="text-gray-700 text-sm mb-4">
-                            Especialista en delitos tributarios, representación legal en querellas fiscales y estrategias de protección patrimonial.
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Lic. Alejandro Gutiérrez</h3>
+                        <p class="text-gold-600 font-semibold text-xs mb-3 uppercase">Especialista en Penal Fiscal</p>
+                        <p class="text-gray-600 text-xs mb-4">
+                            Experto en delitos tributarios y protección patrimonial de directivos.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Penal Fiscal</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Querellas</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Defensa Patrimonial</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Penal Fiscal</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Defensa</span>
                         </div>
                         <div class="space-y-2">
-                            <a href="mailto:contacto@flcabogados.mx" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-envelope w-5 mr-2"></i>
-                                correo@ejemplo.mx
-                            </a>
-                            <a href="tel:+525500000000" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-phone w-5 mr-2"></i>
-                                55-00-00-00-00
+                            <a href="mailto:contacto@flcabogados.mx" class="flex items-center text-gray-500 hover:text-gold-600 text-xs transition-colors">
+                                <i class="fas fa-envelope w-4 mr-2"></i> contacto@flcabogados.mx
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Socio 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg partner-card fade-in">
-                    <div class="h-80 overflow-hidden bg-gray-200">
+                 <!-- Socio 4 -->
+                 <div class="bg-white rounded-xl overflow-hidden shadow-lg partner-card fade-in">
+                    <div class="h-64 overflow-hidden bg-gray-200">
                         <img src="img/socios/socio4.jpg" alt="Lic. Marisol Pedroza" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-navy-900 mb-1">Lic. Marisol Pedroza</h3>
-                        <p class="text-red-700 font-semibold text-sm mb-3">Licenciada en Derecho | Especialista en PLD y Compliance</p>
-                        <p class="text-gray-600 text-sm mb-4">Cédula Profesional: [Por asignar]</p>
-                        <p class="text-gray-700 text-sm mb-4">
-                            Especialista en Prevención de Lavado de Dinero (PLD) y Compliance Corporativo.
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Lic. Marisol Pedroza</h3>
+                        <p class="text-gold-600 font-semibold text-xs mb-3 uppercase">Especialista en PLD y Compliance</p>
+                        <p class="text-gray-600 text-xs mb-4">
+                            Especialista en Prevención de Lavado de Dinero y Normatividad.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">PLD</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Compliance</span>
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full">Normatividad</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">PLD</span>
+                            <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Compliance</span>
                         </div>
                         <div class="space-y-2">
-                            <a href="mailto:contacto@flcabogados.mx" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-envelope w-5 mr-2"></i>
-                                correo@ejemplo.mx
-                            </a>
-                            <a href="tel:+525500000000" class="flex items-center text-gray-700 hover:text-red-700 transition-colors text-sm">
-                                <i class="fas fa-phone w-5 mr-2"></i>
-                                55-00-00-00-00
+                            <a href="mailto:contacto@flcabogados.mx" class="flex items-center text-gray-500 hover:text-gold-600 text-xs transition-colors">
+                                <i class="fas fa-envelope w-4 mr-2"></i> contacto@flcabogados.mx
                             </a>
                         </div>
                     </div>
@@ -358,288 +346,79 @@
         </div>
     </section>
 
-    <!-- Actualidad Section -->
+    <!-- ACTUALIDAD / FAQ / CONTACTO (Manteniendo estructura original simplificada) -->
     <section id="actualidad" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-navy-900 mb-4">Actualidad Fiscal</h2>
-                <div class="w-24 h-1 bg-red-700 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Circular Informativa FLC - Análisis estratégico de reformas, criterios normativos y tendencias en fiscalización.
-                </p>
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Actualidad Fiscal</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mb-6"></div>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Artículo 1 -->
-                <article class="bg-gray-50 rounded-xl overflow-hidden card-hover fade-in border-2 border-transparent hover:border-red-700">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold">EFOS/EDOS</span>
-                            <span class="text-gray-600 text-sm">May 2026</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Defensa efectiva ante el listado del Art. 69-B CFF</h3>
-                        <p class="text-gray-700 mb-4">
-                            Estrategias probadas para desvirtuar presunciones de operaciones inexistentes, presentar pruebas contundentes y evitar consecuencias penales para directivos.
-                        </p>
-                        <button class="accordion-trigger text-red-700 font-semibold flex items-center justify-between w-full hover:text-red-800 transition-colors">
-                            Leer Circular <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="accordion-content mt-4 pt-4 border-t border-gray-200">
-                            <p class="text-gray-600 text-sm mb-3">Contenido completo de la circular con análisis detallado, jurisprudencia aplicable y casos prácticos de éxito.</p>
-                            <a href="#contacto" class="text-red-700 font-semibold hover:text-red-800 text-sm">Solicitar circular completa →</a>
-                        </div>
-                    </div>
+                <article class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-gold-500 transition-colors fade-in">
+                    <span class="bg-slate-900 text-gold-400 px-3 py-1 rounded-full text-xs font-bold">EFOS/EDOS</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-4 mb-2">Defensa efectiva ante el listado del Art. 69-B CFF</h3>
+                    <p class="text-gray-600 text-sm mb-4">Estrategias probadas para desvirtuar presunciones de operaciones inexistentes.</p>
+                    <a href="#contacto" class="text-gold-600 font-semibold hover:text-gold-500 text-sm">Leer más →</a>
                 </article>
-
-                <!-- Artículo 2 -->
-                <article class="bg-gray-50 rounded-xl overflow-hidden card-hover fade-in border-2 border-transparent hover:border-red-700">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold">Devoluciones</span>
-                            <span class="text-gray-600 text-sm">Abr 2026</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Criterios recientes del SAT para devoluciones de IVA</h3>
-                        <p class="text-gray-700 mb-4">
-                            Actualización sobre requisitos documentales, plazos de resolución y estrategias para acelerar la recuperación de saldos a favor sin contingencias.
-                        </p>
-                        <button class="accordion-trigger text-red-700 font-semibold flex items-center justify-between w-full hover:text-red-800 transition-colors">
-                            Leer Circular <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="accordion-content mt-4 pt-4 border-t border-gray-200">
-                            <p class="text-gray-600 text-sm mb-3">Contenido completo de la circular con análisis detallado, jurisprudencia aplicable y casos prácticos de éxito.</p>
-                            <a href="#contacto" class="text-red-700 font-semibold hover:text-red-800 text-sm">Solicitar circular completa →</a>
-                        </div>
-                    </div>
+                <article class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-gold-500 transition-colors fade-in">
+                    <span class="bg-slate-900 text-gold-400 px-3 py-1 rounded-full text-xs font-bold">Devoluciones</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-4 mb-2">Criterios recientes del SAT para devoluciones de IVA</h3>
+                    <p class="text-gray-600 text-sm mb-4">Actualización sobre requisitos documentales y plazos de resolución.</p>
+                    <a href="#contacto" class="text-gold-600 font-semibold hover:text-gold-500 text-sm">Leer más →</a>
                 </article>
-
-                <!-- Artículo 3 -->
-                <article class="bg-gray-50 rounded-xl overflow-hidden card-hover fade-in border-2 border-transparent hover:border-red-700">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold">Auditorías</span>
-                            <span class="text-gray-600 text-sm">Mar 2026</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Cómo prepararse para una revisión de gabinete electrónica</h3>
-                        <p class="text-gray-700 mb-4">
-                            Checklist práctico para organizar su información contable-fiscal, responder requerimientos del Buzón Tributario y negociar observaciones oportunamente.
-                        </p>
-                        <button class="accordion-trigger text-red-700 font-semibold flex items-center justify-between w-full hover:text-red-800 transition-colors">
-                            Leer Circular <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="accordion-content mt-4 pt-4 border-t border-gray-200">
-                            <p class="text-gray-600 text-sm mb-3">Contenido completo de la circular con análisis detallado, jurisprudencia aplicable y casos prácticos de éxito.</p>
-                            <a href="#contacto" class="text-red-700 font-semibold hover:text-red-800 text-sm">Solicitar circular completa →</a>
-                        </div>
-                    </div>
+                <article class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-gold-500 transition-colors fade-in">
+                    <span class="bg-slate-900 text-gold-400 px-3 py-1 rounded-full text-xs font-bold">Auditorías</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-4 mb-2">Cómo prepararse para una revisión electrónica</h3>
+                    <p class="text-gray-600 text-sm mb-4">Checklist práctico para organizar su información contable-fiscal.</p>
+                    <a href="#contacto" class="text-gold-600 font-semibold hover:text-gold-500 text-sm">Leer más →</a>
                 </article>
-            </div>
-
-            <div class="text-center mt-12 fade-in">
-                <a href="#contacto" class="inline-block border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all">
-                    Suscribirse a Circular FLC
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
+    <section id="contacto" class="py-20 bg-slate-900 text-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-navy-900 mb-4">Preguntas Frecuentes</h2>
-                <div class="w-24 h-1 bg-red-700 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Dudas Comunes en Materia Fiscal - Respuestas claras y técnicas a las inquietudes más frecuentes.
-                </p>
-            </div>
-
-            <div class="max-w-4xl mx-auto space-y-4">
-                <!-- Pregunta 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden fade-in">
-                    <button class="accordion-trigger w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-semibold text-navy-900 text-lg">¿Qué hacer si mi empresa aparece en el listado de EFOS/EDOS del Art. 69-B CFF?</span>
-                        <i class="fas fa-chevron-down text-red-700 transition-transform"></i>
-                    </button>
-                    <div class="accordion-content px-6">
-                        <p class="text-gray-700 pb-4">
-                            Actúe con urgencia: tiene 30 días hábiles para desvirtuar la presunción. Nuestra estrategia incluye: análisis forense, recopilación de evidencia documental, redacción técnica-jurídica y seguimiento personalizado. Evite ignorar la notificación.
-                        </p>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Contacto</h2>
+                    <p class="text-gray-300 mb-8">Agende su diagnóstico fiscal y un especialista se pondrá en contacto en menos de 24 horas.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-gold-500 p-3 rounded-lg mr-4 text-slate-900">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Oficina</h4>
+                                <p class="text-gray-400">Ciudad de México, México</p>
+                                <p class="text-gold-400 text-sm mt-1">Cita previa requerida</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-gold-500 p-3 rounded-lg mr-4 text-slate-900">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <a href="mailto:contacto@flcabogados.mx" class="text-gray-400 hover:text-gold-400 transition-colors">contacto@flcabogados.mx</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Pregunta 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden fade-in">
-                    <button class="accordion-trigger w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-semibold text-navy-900 text-lg">¿Cuánto tiempo tarda una devolución de IVA?</span>
-                        <i class="fas fa-chevron-down text-red-700 transition-transform"></i>
-                    </button>
-                    <div class="accordion-content px-6">
-                        <p class="text-gray-700 pb-4">
-                            El plazo legal es de 40 días hábiles. Para acelerarla: asegure requisitos formales, anticipe observaciones, dé seguimiento proactivo y responda requerimientos rápidamente. Nuestra gestión técnica reduce significativamente los tiempos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden fade-in">
-                    <button class="accordion-trigger w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-semibold text-navy-900 text-lg">¿Es viable negociar con el SAT antes de llegar a juicio?</span>
-                        <i class="fas fa-chevron-down text-red-700 transition-transform"></i>
-                    </button>
-                    <div class="accordion-content px-6">
-                        <p class="text-gray-700 pb-4">
-                            Sí, mediante Acuerdos Conclusivos ante PRODECON. Permite resolver controversias de forma ágil sin litigio, siempre que se cuente con argumentos técnicos sólidos. Evaluamos caso por caso la mejor estrategia.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto Section -->
-    <section id="contacto" class="py-20 bg-navy-900 text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold mb-4">Contacto</h2>
-                <div class="w-24 h-1 bg-red-700 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Agende su Diagnóstico Fiscal - Complete el formulario y un especialista de FLC se contactará con usted en menos de 24 horas hábiles.
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- Formulario -->
-                <div class="bg-white rounded-xl p-8 fade-in">
-                    <form id="contactForm" class="space-y-6">
-                        <div>
-                            <label class="block text-gray-900 font-semibold mb-2">Nombre completo *</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-900" placeholder="Su nombre completo">
-                        </div>
-                        <div>
-                            <label class="block text-gray-900 font-semibold mb-2">Empresa *</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-900" placeholder="Nombre de su empresa">
-                        </div>
-                        <div>
-                            <label class="block text-gray-900 font-semibold mb-2">Correo electrónico *</label>
-                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-900" placeholder="correo@empresa.com">
-                        </div>
-                        <div>
-                            <label class="block text-gray-900 font-semibold mb-2">Teléfono</label>
-                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-900" placeholder="(55) 0000-0000">
-                        </div>
-                        <div>
-                            <label class="block text-gray-900 font-semibold mb-2">Servicio de interés</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-900">
-                                <option>Seleccione una opción</option>
-                                <option>Consultoría y Planeación Fiscal</option>
-                                <option>Defensa Fiscal y Controversia</option>
-                                <option>Devoluciones y Compensaciones</option>
-                                <option>EFOS/EDOS y Riesgo Fiscal</option>
-                                <option>Otro</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-gray-900 font-semibold mb-2">Mensaje *</label>
-                            <textarea required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-900" placeholder="Describa su consulta o situación fiscal..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg">
-                            Enviar Solicitud de Asesoría
-                        </button>
-                        <p class="text-gray-600 text-sm text-center">
-                            Sus datos están protegidos bajo nuestra Política de Privacidad.
-                        </p>
+                <div class="bg-white p-8 rounded-xl text-gray-900">
+                    <form id="contactForm" class="space-y-4">
+                        <input type="text" placeholder="Nombre completo" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none">
+                        <input type="email" placeholder="Correo electrónico" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none">
+                        <textarea rows="4" placeholder="Mensaje" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none"></textarea>
+                        <button type="submit" class="w-full btn-gold py-3 rounded-lg font-bold text-white shadow-lg">Enviar Solicitud</button>
                     </form>
                 </div>
-
-                <!-- Info de Contacto -->
-                <div class="space-y-8 fade-in">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6">Contacto Directo FLC</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="bg-white bg-opacity-10 rounded-lg p-6">
-                                <h4 class="font-bold text-xl mb-2">C.P. Jose Israel Cerbon Peña</h4>
-                                <p class="text-red-400 mb-2">Especialista en Derecho Fiscal y Contabilidad Forense</p>
-                                <p class="text-gray-300 text-sm mb-4">Cédula Profesional: [Por asignar]</p>
-                                <a href="mailto:cerbonisrael@gmail.com" class="flex items-center text-white hover:text-red-400 transition-colors mb-2">
-                                    <i class="fas fa-envelope w-6 mr-3"></i>
-                                    cerbonisrael@gmail.com
-                                </a>
-                                <a href="tel:+525564045881" class="flex items-center text-white hover:text-red-400 transition-colors">
-                                    <i class="fas fa-phone w-6 mr-3"></i>
-                                    55-64-04-58-81
-                                </a>
-                            </div>
-
-                            <div class="bg-white bg-opacity-10 rounded-lg p-6">
-                                <h4 class="font-bold text-xl mb-2">Lic. Carlos Eduardo Pedroza</h4>
-                                <p class="text-red-400 mb-2">Litigio Fiscal</p>
-                                <p class="text-gray-300 text-sm mb-4">Cédula Profesional: [Por asignar]</p>
-                                <a href="mailto:cpedrozabogado@outlook.com" class="flex items-center text-white hover:text-red-400 transition-colors mb-2">
-                                    <i class="fas fa-envelope w-6 mr-3"></i>
-                                    cpedrozabogado@outlook.com
-                                </a>
-                                <a href="https://wa.me/5215518096806" class="flex items-center text-white hover:text-red-400 transition-colors">
-                                    <i class="fab fa-whatsapp w-6 mr-3"></i>
-                                    +52 55-18-09-68-06
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white bg-opacity-10 rounded-lg p-6">
-                        <h4 class="font-bold text-xl mb-4">Oficina para reuniones</h4>
-                        <p class="text-gray-300 mb-2"><i class="fas fa-map-marker-alt w-6 mr-3"></i>Ciudad de México, México</p>
-                        <p class="text-gray-300 mb-4">Cita previa requerida</p>
-                        <div class="border-t border-gray-600 pt-4 mt-4">
-                            <p class="text-gray-300 mb-2"><i class="far fa-clock w-6 mr-3"></i>Horario de atención:</p>
-                            <p class="text-gray-300">Lunes a Viernes: 9:00 - 18:00 hrs</p>
-                            <p class="text-red-400 font-semibold mt-2">Respuesta a consultas: &lt; 24 horas hábiles</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-red-700 rounded-lg p-6">
-                        <h4 class="font-bold text-xl mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>¿Caso urgente EFOS/EDOS?</h4>
-                        <p class="text-white">Si recibió notificación del Art. 69-B CFF, contáctenos de inmediato para activar protocolo de defensa.</p>
-                        <p class="text-red-200 text-sm mt-3">Confidencialidad garantizada en cada consulta</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 border-t-4 border-red-700">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="col-span-2">
-                    <img src="img/socios/FLC.jpeg" alt="FLC" class="h-16 w-auto object-contain mb-4 bg-white rounded p-2">
-                    <p class="text-gray-400 mb-4">
-                        Firma especializada en Defensa Fiscal, Controversia Tributaria y Estrategia Corporativa. Protección integral del patrimonio empresarial.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-lg mb-4">Servicios</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#servicios" class="hover:text-red-600 transition-colors">Consultoría Fiscal</a></li>
-                        <li><a href="#servicios" class="hover:text-red-600 transition-colors">Defensa y Controversia</a></li>
-                        <li><a href="#servicios" class="hover:text-red-600 transition-colors">Devoluciones ISR/IVA</a></li>
-                        <li><a href="#servicios" class="hover:text-red-600 transition-colors">EFOS / EDOS Art. 69-B</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-lg mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-red-600 transition-colors">Aviso de Privacidad</a></li>
-                        <li><a href="#" class="hover:text-red-600 transition-colors">Términos de Servicio</a></li>
-                        <li><a href="#contacto" class="hover:text-red-600 transition-colors">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2026 FLC Abogados Tributarios. Todos los derechos reservados.</p>
-                <p class="text-gray-500 text-sm mt-2">Despacho especializado en materia fiscal. No sustituye asesoría legal personalizada.</p>
-            </div>
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2026 FLC Abogados Tributarios. Todos los derechos reservados.</p>
         </div>
     </footer>
 
