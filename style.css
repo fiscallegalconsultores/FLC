@@ -19,13 +19,13 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
 .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
 
-/* Botón Dorado */
-.btn-gold {
-    background: linear-gradient(135deg, #D4AF37 0%, #B89628 100%);
+/* Botón Azul */
+.btn-blue {
+    background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
 }
 
-.btn-gold:hover {
-    background: linear-gradient(135deg, #B89628 0%, #A3851F 100%);
+.btn-blue:hover {
+    background: linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%);
     transform: translateY(-1px);
 }
 
@@ -74,17 +74,17 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D4AF37;
+    background: #1D4ED8;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #B89628;
+    background: #1E40AF;
 }
 
 /* Selection */
 ::selection {
-    background: #D4AF37;
+    background: #1D4ED8;
     color: #FFFFFF;
 }
 

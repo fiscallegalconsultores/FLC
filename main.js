@@ -96,25 +96,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // FORMULARIO DE CONTACTO
+    // FORMSPREE FORM SUBMISSION (AJAX)
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
             
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
             
-            setTimeout(() => {
-                alert('✓ Gracias por contactar a FLC Abogados Tributarios. Hemos recibido su solicitud y un especialista se comunicará con usted en menos de 24 horas hábiles.');
-                this.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            }, 1500);
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('✓ Gracias por contactar a FLC Abogados Tributarios. Hemos recibido su solicitud y un especialista se comunicará con usted en menos de 24 horas hábiles.');
+                    this.reset();
+                } else {
+                    const data = await response.json();
+                    const errorMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Error desconocido';
+                    alert('⚠️ Hubo un problema al enviar el mensaje: ' + errorMsg + '\n\nPor favor, intente nuevamente o contáctenos directamente por WhatsApp.');
+                }
+            } catch (error) {
+                alert('⚠️ Error de conexión. Por favor, verifique su internet o contáctenos directamente por WhatsApp.');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
         });
     }
     
@@ -139,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // NAVBAR SCROLL EFFECT
     const navbar = document.getElementById('navbar');
-    
     if (navbar) {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -150,10 +166,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbar.classList.add('bg-white/95');
             }
         };
-        
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
     }
-    
-    console.log('FLC Abogados Tributarios - Landing Page cargada correctamente ✓');
+});
+
+// FUNCIONES PARA MODALES
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = ''; // Restaurar scroll
+    }
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('fixed')) {
+        e.target.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
 });
