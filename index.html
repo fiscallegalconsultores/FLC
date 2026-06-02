@@ -55,10 +55,11 @@
     <!-- NAVBAR -->
     <nav class="bg-white/95 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-40 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-[96px]">
+                <!-- Logo FLC (Más grande) -->
                 <a href="#inicio" class="flex items-center space-x-3 group">
-                    <div class="w-16 h-16 bg-navy-900 rounded-2xl flex items-center justify-center shadow-soft group-hover:shadow-blue transition-all duration-300 transform group-hover:scale-105">
-                        <img src="img/socios/FLC.jpeg" alt="FLC Logo" class="w-14 h-14 object-contain rounded-xl">
+                    <div class="w-20 h-20 bg-navy-900 rounded-2xl flex items-center justify-center shadow-soft group-hover:shadow-blue transition-all duration-300 transform group-hover:scale-105">
+                        <img src="img/socios/FLC.jpeg" alt="FLC Logo" class="w-[72px] h-[72px] object-contain rounded-xl">
                     </div>
                     <div class="hidden sm:block">
                         <span class="block font-serif font-bold text-xl text-navy-900 leading-tight">FLC</span>
@@ -102,25 +103,30 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (con imagen) -->
     <section id="inicio" class="relative bg-navy-900 text-white overflow-hidden">
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-20 left-10 w-72 h-72 bg-blue-primary rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-10 w-96 h-96 bg-navy-800 rounded-full blur-3xl"></div>
         </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Content -->
                 <div class="space-y-8 animate-fade-in">
                     <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
                         <i class="fas fa-shield-alt text-blue-light"></i>
                         <span class="text-sm font-medium text-slate-200">Especialistas en Derecho Fiscal y Contabilidad Forense</span>
                     </div>
+                    
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight">
                         Consultoría <span class="text-blue-light">Fiscal y Legal</span>
                     </h1>
+                    
                     <p class="text-lg text-slate-300 leading-relaxed max-w-xl">
                         En FLC Abogados Tributarios, nuestros socios fundadores combinan experiencia operativa y formación especializada en derecho fiscal para proteger su patrimonio con estrategia técnica probada y rigor jurídico.
                     </p>
+                    
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="#contacto" class="inline-flex items-center justify-center bg-gradient-to-r from-blue-primary to-blue-hover hover:from-blue-hover hover:to-blue-900 text-white px-8 py-4 rounded-xl font-semibold shadow-blue hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                             Agendar Diagnóstico Fiscal
@@ -130,6 +136,8 @@
                             Explorar Servicios
                         </a>
                     </div>
+                    
+                    <!-- Trust Indicators -->
                     <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
                         <div class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-light"></i><span class="text-sm text-slate-300">Devoluciones ISR/IVA</span></div>
                         <div class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-light"></i><span class="text-sm text-slate-300">EFOS/EDOS</span></div>
@@ -139,29 +147,24 @@
                         <div class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-light"></i><span class="text-sm text-slate-300">PRODECON</span></div>
                     </div>
                 </div>
+                
+                <!-- Hero Visual - IMAGEN PROFESIONAL -->
                 <div class="hidden lg:block relative">
                     <div class="absolute -inset-4 bg-gradient-to-r from-blue-primary/20 to-navy-800/20 rounded-3xl blur-2xl"></div>
-                    <div class="relative bg-navy-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-navy-900/80 rounded-xl p-6 border border-white/5 hover:border-blue-primary/50 transition-colors">
-                                <i class="fas fa-file-invoice-dollar text-3xl text-blue-light mb-4"></i>
-                                <h4 class="font-semibold text-white mb-2">ISR / IVA</h4>
-                                <p class="text-sm text-slate-400">Devoluciones y compensaciones estratégicas</p>
-                            </div>
-                            <div class="bg-navy-900/80 rounded-xl p-6 border border-white/5 hover:border-blue-primary/50 transition-colors">
-                                <i class="fas fa-gavel text-3xl text-blue-light mb-4"></i>
-                                <h4 class="font-semibold text-white mb-2">Litigio</h4>
-                                <p class="text-sm text-slate-400">Nulidad, amparo y recursos administrativos</p>
-                            </div>
-                            <div class="bg-navy-900/80 rounded-xl p-6 border border-white/5 hover:border-blue-primary/50 transition-colors">
-                                <i class="fas fa-search text-3xl text-blue-light mb-4"></i>
-                                <h4 class="font-semibold text-white mb-2">Auditorías</h4>
-                                <p class="text-sm text-slate-400">Defensa en revisiones de gabinete</p>
-                            </div>
-                            <div class="bg-navy-900/80 rounded-xl p-6 border border-white/5 hover:border-blue-primary/50 transition-colors">
-                                <i class="fas fa-handshake text-3xl text-blue-light mb-4"></i>
-                                <h4 class="font-semibold text-white mb-2">PRODECON</h4>
-                                <p class="text-sm text-slate-400">Acuerdos conclusivos y negociación</p>
+                    <div class="relative">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-primary/30">
+                            <img src="img/socios/hero-flc.jpg" alt="FLC Abogados Tributarios - Consultoría Fiscal Profesional" class="w-full h-[520px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <div class="flex items-center space-x-3 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+                                    <div class="bg-blue-primary w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-balance-scale text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-semibold text-sm">Defensa Fiscal Estratégica</p>
+                                        <p class="text-blue-light text-xs">Visión 360° | Contable + Legal</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -312,7 +315,6 @@
                 <p class="text-lg text-slate-600 max-w-3xl mx-auto">Un equipo multidisciplinario que combina experiencia operativa, litigio estratégico y cumplimiento normativo.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Socio 1 -->
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -336,7 +338,6 @@
                     </div>
                 </div>
 
-                <!-- Socio 2 -->
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -360,7 +361,6 @@
                     </div>
                 </div>
 
-                <!-- Socio 3 -->
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -383,7 +383,6 @@
                     </div>
                 </div>
 
-                <!-- Socio 4 -->
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -445,7 +444,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ (8 preguntas totales) -->
     <section class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -478,6 +477,51 @@
                     </button>
                     <div class="faq-content px-6 pb-5 hidden">
                         <p class="text-slate-600 leading-relaxed"><strong>¡Absolutamente!</strong> Los Acuerdos Conclusivos ante PRODECON son la vía más rápida y económica. Resolvemos su controversia en semanas, con ahorros de hasta 60% en costos legales. Nuestros socios conocen los criterios de negociación y logran los mejores resultados.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-navy-900 pr-4">¿Qué incluye un diagnóstico fiscal integral y cuánto tiempo toma?</span>
+                        <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <p class="text-slate-600 leading-relaxed"><strong>Incluye un análisis 360°</strong> de su situación fiscal: revisiones de cumplimiento de ISR, IVA e IEPS, detección de contingencias latentes, oportunidades de optimización tributaria y un reporte ejecutivo con recomendaciones priorizadas. Entrega en <strong>5 a 10 días hábiles</strong> según la complejidad. Es el primer paso para una defensa o planeación sólida.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-navy-900 pr-4">¿Qué ventajas tiene FLC frente a otros despachos fiscales?</span>
+                        <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <p class="text-slate-600 leading-relaxed"><strong>Tres ventajas decisivas:</strong> (1) Experiencia interna de 18 años en el SAT: conocemos los criterios de autoridad desde adentro; (2) Visión 360° que combina lo contable y lo legal en un solo equipo, sin intermediarios; y (3) Atención personalizada por socios fundadores, no por asociados junior. Esta combinación genera resultados superiores.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-navy-900 pr-4">¿Es recomendable contratar un perito contable antes de una auditoría del SAT?</span>
+                        <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <p class="text-slate-600 leading-relaxed"><strong>Sí, y es una decisión estratégica.</strong> Un peritaje contable preventivo le permite identificar inconsistencias antes de que la autoridad las detecte, prepara su defensa con evidencia técnica sólida y puede inclinar la balanza a su favor en un litigio futuro. FLC elabora dictámenes periciales con metodología forense aceptada por tribunales federales.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-navy-900 pr-4">¿Cuánto cuestan sus servicios y cómo manejan los honorarios?</span>
+                        <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <p class="text-slate-600 leading-relaxed"><strong>Cada caso es único,</strong> por lo que cotizamos tras un diagnóstico inicial sin costo. Manejamos honorarios claros mediante propuesta formal: por proyecto, por etapa o por resultado, según el servicio. Transparencia total: sin costos ocultos ni sorpresas. Agenda su diagnóstico gratuito para recibir una cotización personalizada.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-navy-900 pr-4">¿Qué pasa si ya tengo un crédito fiscal determinado, aún puedo defenderme?</span>
+                        <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <p class="text-slate-600 leading-relaxed"><strong>Por supuesto.</strong> Un crédito fiscal determinado no es una sentencia definitiva. Usted cuenta con 30 días hábiles para interponer recurso de revocación y, posteriormente, juicio de nulidad ante el TFJA. Incluso con el crédito ya firme, existen vías extraordinarias (amparo, desconocimiento) que han permitido a nuestros clientes reducir o extinguir montos millonarios. Evalúe su caso con nosotros sin compromiso.</p>
                     </div>
                 </div>
             </div>
@@ -528,10 +572,43 @@
                             <label for="mensaje" class="block text-sm font-semibold text-slate-700 mb-2">Mensaje *</label>
                             <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900 resize-none" placeholder="Describa brevemente su consulta o situación fiscal..."></textarea>
                         </div>
+
+                        <!-- Aviso de Privacidad Simplificado -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-lock text-blue-primary mt-1"></i>
+                                <p class="text-xs text-slate-700 leading-relaxed">
+                                    Sus datos personales serán tratados conforme a nuestro 
+                                    <button type="button" onclick="openModal('privacyModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Aviso de Privacidad</button> 
+                                    para atender su solicitud de asesoría fiscal. No compartiremos su información con terceros ajenos a FLC Abogados Tributarios, salvo para cumplir con finalidades legales estrictamente necesarias.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Casillas de aceptación -->
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <input type="checkbox" id="privacidad" name="privacidad" required class="mt-1 mr-3 w-4 h-4 accent-blue-primary cursor-pointer">
+                                <label for="privacidad" class="text-xs text-slate-700 cursor-pointer">
+                                    He leído y acepto el 
+                                    <button type="button" onclick="openModal('privacyModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Aviso de Privacidad</button> 
+                                    de FLC Abogados Tributarios. *
+                                </label>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="terminos" name="terminos" required class="mt-1 mr-3 w-4 h-4 accent-blue-primary cursor-pointer">
+                                <label for="terminos" class="text-xs text-slate-700 cursor-pointer">
+                                    He leído y acepto los 
+                                    <button type="button" onclick="openModal('termsModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Términos de Servicio</button> 
+                                    y descargo de responsabilidad del sitio. *
+                                </label>
+                            </div>
+                        </div>
+
                         <button type="submit" class="w-full bg-gradient-to-r from-blue-primary to-blue-hover hover:from-blue-hover hover:to-blue-900 text-white font-semibold py-4 rounded-xl shadow-blue hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
                             Enviar Solicitud de Asesoría
                         </button>
-                        <p class="text-center text-xs text-slate-500">Sus datos están protegidos bajo nuestra Política de Privacidad.</p>
+                        <p class="text-center text-xs text-slate-500">Los campos marcados con * son obligatorios.</p>
                     </form>
                 </div>
 
@@ -674,7 +751,7 @@
                 <iframe src="img/socios/aviso-privacidad.pdf" class="w-full h-[60vh] rounded-lg border border-slate-200" title="Aviso de Privacidad"></iframe>
                 <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                     <p class="text-sm text-blue-800 font-semibold mb-1">Nota:</p>
-                    <p class="text-sm text-blue-700">Si el documento no se visualiza, puede descargarlo directamente desde nuestro repositorio de GitHub o solicitarlo a fiscallegalconsultores@gmail.com</p>
+                    <p class="text-sm text-blue-700">Si el documento no se visualiza, puede solicitarlo directamente a fiscallegalconsultores@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -691,7 +768,7 @@
                 <iframe src="img/socios/terminos-servicio.pdf" class="w-full h-[60vh] rounded-lg border border-slate-200" title="Términos de Servicio"></iframe>
                 <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                     <p class="text-sm text-blue-800 font-semibold mb-1">Nota:</p>
-                    <p class="text-sm text-blue-700">Si el documento no se visualiza, puede descargarlo directamente desde nuestro repositorio de GitHub o solicitarlo a fiscallegalconsultores@gmail.com</p>
+                    <p class="text-sm text-blue-700">Si el documento no se visualiza, puede solicitarlo directamente a fiscallegalconsultores@gmail.com</p>
                 </div>
             </div>
         </div>
