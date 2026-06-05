@@ -1,16 +1,11 @@
-/* ========================================
-   FLC Abogados Tributarios - style.css
-   ======================================== */
-
+/* style.css */
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
-/* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes bounce-slow {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -19,17 +14,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
 .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
 
-/* Botón Azul */
-.btn-blue {
-    background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
-}
-
-.btn-blue:hover {
-    background: linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%);
-    transform: translateY(-1px);
-}
-
-/* FAQ Accordion */
+/* FAQ Accordion - Despliegue Dinámico */
 .faq-content {
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
     max-height: 0;
@@ -41,63 +26,27 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 .faq-content.active {
     max-height: 500px;
     opacity: 1;
-    padding-top: 1rem;
+    padding-bottom: 1.5rem;
 }
 
 .faq-trigger[aria-expanded="true"] i {
     transform: rotate(180deg);
 }
 
-/* Aspect Ratio */
-.aspect-w-4 {
-    position: relative;
-    padding-bottom: 75%;
+/* Transición para íconos de circulares */
+.circular-card i {
+    transition: transform 0.2s ease;
 }
 
-.aspect-w-4 > * {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+/* Utilerías de Navegación Horizontal Móvil */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Scrollbar personalizado */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0F172A;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #1D4ED8;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #1E40AF;
-}
-
-/* Selection */
-::selection {
-    background: #1D4ED8;
-    color: #FFFFFF;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .faq-content.active {
-        max-height: 400px;
-    }
-}
-
-/* Print */
-@media print {
-    nav, footer, .faq-trigger i, button, .fixed {
-        display: none;
-    }
-}
+.shadow-soft { box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08); }
+.shadow-blue { box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.3); }
+.text-xxs { font-size: 0.65rem; }

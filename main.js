@@ -1,37 +1,7 @@
 // main.js
 document.addEventListener('DOMContentLoaded', function() {
     
-    // MENÚ MÓVIL
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('hidden');
-            
-            const icon = this.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            }
-        });
-        
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        });
-    }
-    
-    // FAQ ACCORDION
+    // FAQ ACCORDION CON APERTURA DINÁMICA POR EVENTO CLICK
     const faqTriggers = document.querySelectorAll('.faq-trigger');
     
     faqTriggers.forEach(trigger => {
@@ -59,53 +29,66 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // INTERACCIÓN ACTUALIDAD FISCAL (Preparado para despliegue futuro al dar click en circulares)
+    const circularCards = document.querySelectorAll('.circular-card');
     
-    // SMOOTH SCROLL
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
+    circularCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const expandedContent = this.querySelector('.circular-expanded-content');
+            const arrowIcon = this.querySelector('.fa-arrow-right');
             
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const navbar = document.getElementById('navbar');
-                const navbarHeight = navbar ? navbar.offsetHeight : 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 20;
+            if (expandedContent) {
+                const isHidden = expandedContent.classList.contains('hidden');
                 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
+                // Cierra otras circulares primero
+                document.querySelectorAll('.circular-expanded-content').forEach(content => {
+                    content.classList.add('hidden');
                 });
-                
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    if (mobileMenuBtn) {
-                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                    }
+                document.querySelectorAll('.circular-card .fa-arrow-right').forEach(icon => {
+                    icon.style.transform = 'rotate(0)';
+                });
+
+                if (isHidden) {
+                    expandedContent.classList.remove('hidden');
+                    if (arrowIcon) arrowIcon.style.transform = 'rotate(90deg)';
+                } else {
+                    expandedContent.classList.add('hidden');
+                    if (arrowIcon) arrowIcon.style.transform = 'rotate(0)';
                 }
             }
         });
     });
     
-    // FORMSPREE FORM SUBMISSION (AJAX)
-    const contactForm = document.getElementById('contactForm');
+    // SMOOTH SCROLL CON OFFSET DE NAVBAR PARA MÓVILES
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navbar = document.getElementById('navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 96;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 10;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
     
+    // FORMSPREE FORM SUBMISSION (Original)
+    const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
             const btn = this.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
-            
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
             
@@ -113,85 +96,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await fetch(this.action, {
                     method: 'POST',
                     body: new FormData(this),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
-                
                 if (response.ok) {
-                    alert('✓ Gracias por contactar a FLC Abogados Tributarios. Hemos recibido su solicitud y un especialista se comunicará con usted en menos de 24 horas hábiles.');
+                    alert('✓ Consulta recibida. Nos comunicaremos a la brevedad.');
                     this.reset();
                 } else {
-                    const data = await response.json();
-                    const errorMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Error desconocido';
-                    alert('⚠️ Hubo un problema al enviar el mensaje: ' + errorMsg + '\n\nPor favor, intente nuevamente o contáctenos directamente por WhatsApp.');
+                    alert('❌ Hubo un inconveniente al enviar su consulta.');
                 }
             } catch (error) {
-                alert('⚠️ Error de conexión. Por favor, verifique su internet o contáctenos directamente por WhatsApp.');
+                alert('❌ Ocurrió un error de conexión.');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = originalText;
             }
         });
     }
-    
-    // ANIMACIONES ON-SCROLL
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    document.querySelectorAll('.animate-fade-in').forEach(el => {
-        observer.observe(el);
-    });
-    
-    // NAVBAR SCROLL EFFECT
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-md', 'bg-white/98');
-                navbar.classList.remove('bg-white/95');
-            } else {
-                navbar.classList.remove('shadow-md', 'bg-white/98');
-                navbar.classList.add('bg-white/95');
-            }
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll();
-    }
 });
 
-// FUNCIONES PARA MODALES
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
-    }
+    if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
 }
 
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.add('hidden');
-        document.body.style.overflow = ''; // Restaurar scroll
-    }
+    if (modal) { modal.classList.add('hidden'); document.body.style.overflow = ''; }
 }
-
-// Cerrar modal al hacer clic fuera del contenido
-window.addEventListener('click', function(e) {
-    if (e.target.classList.contains('fixed')) {
-        e.target.classList.add('hidden');
-        document.body.style.overflow = '';
-    }
-});
