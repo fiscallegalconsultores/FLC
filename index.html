@@ -52,39 +52,62 @@
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- NAVBAR - VERSIÓN RESPONSIVE SIN HAMBURGUESA (enlaces siempre visibles) -->
+    <!-- NAVBAR -->
     <nav class="bg-white/95 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-40 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap items-center justify-between py-3 md:py-0 md:h-[96px]">
+            <div class="flex justify-between items-center h-[96px]">
                 <!-- Logo FLC -->
-                <a href="#inicio" class="flex items-center space-x-3 group shrink-0">
-                    <div class="w-12 h-12 md:w-20 md:h-20 bg-navy-900 rounded-2xl flex items-center justify-center shadow-soft group-hover:shadow-blue transition-all duration-300">
-                        <img src="img/socios/FLC.jpeg" alt="FLC Logo" class="w-10 h-10 md:w-[72px] md:h-[72px] object-contain rounded-xl">
+                <a href="#inicio" class="flex items-center space-x-3 group">
+                    <div class="w-20 h-20 bg-navy-900 rounded-2xl flex items-center justify-center shadow-soft group-hover:shadow-blue transition-all duration-300 transform group-hover:scale-105">
+                        <img src="img/socios/FLC.jpeg" alt="FLC Logo" class="w-[72px] h-[72px] object-contain rounded-xl">
                     </div>
                     <div class="hidden sm:block">
-                        <span class="block font-serif font-bold text-lg md:text-xl text-navy-900 leading-tight">FLC</span>
+                        <span class="block font-serif font-bold text-xl text-navy-900 leading-tight">FLC</span>
                         <span class="block text-xs text-slate-500 tracking-wide">Abogados Tributarios</span>
                     </div>
                 </a>
 
-                <!-- Menú de navegación - siempre visible, se ajusta a móvil con wrap y espaciado -->
-                <div class="flex flex-wrap items-center justify-center gap-2 md:gap-6 py-2 md:py-0 w-full md:w-auto mt-2 md:mt-0">
-                    <a href="#inicio" class="text-slate-700 hover:text-blue-primary font-medium transition-colors px-2 py-1 text-sm md:text-base">Inicio</a>
-                    <a href="#servicios" class="text-slate-700 hover:text-blue-primary font-medium transition-colors px-2 py-1 text-sm md:text-base">Servicios</a>
-                    <a href="#urgente" class="text-red-600 hover:text-red-700 font-semibold transition-colors px-2 py-1 text-sm md:text-base"><i class="fas fa-exclamation-circle mr-1"></i> Urgente</a>
-                    <a href="#socios" class="text-slate-700 hover:text-blue-primary font-medium transition-colors px-2 py-1 text-sm md:text-base">Socios</a>
-                    <a href="#actualidad" class="text-slate-700 hover:text-blue-primary font-medium transition-colors px-2 py-1 text-sm md:text-base">Actualidad</a>
-                    <a href="https://fiscallegalconsultores.github.io/Calendario/" target="_blank" class="text-slate-700 hover:text-blue-primary font-medium transition-colors px-2 py-1 text-sm md:text-base"><i class="fas fa-calendar-alt mr-1"></i> Calendario</a>
-                    <a href="#contacto" class="text-slate-700 hover:text-blue-primary font-medium transition-colors px-2 py-1 text-sm md:text-base">Contacto</a>
-                    <a href="#contacto" class="bg-gradient-to-r from-blue-primary to-blue-hover hover:from-blue-hover hover:to-blue-900 text-white px-4 py-2 rounded-xl font-semibold shadow-blue hover:shadow-lg transition-all duration-300 text-sm md:text-base whitespace-nowrap">
+                <!-- MENÚ DESKTOP -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#inicio" class="text-slate-700 hover:text-blue-primary font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-primary">Inicio</a>
+                    <a href="#servicios" class="text-slate-700 hover:text-blue-primary font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-primary">Servicios</a>
+                    <a href="#urgente" class="text-red-600 hover:text-red-700 font-semibold transition-colors py-2 border-b-2 border-transparent hover:border-red-500"><i class="fas fa-exclamation-circle mr-1"></i> Urgente</a>
+                    <a href="#socios" class="text-slate-700 hover:text-blue-primary font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-primary">Socios</a>
+                    <a href="#actualidad" class="text-slate-700 hover:text-blue-primary font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-primary">Actualidad</a>
+                    <a href="https://fiscallegalconsultores.github.io/Calendario/" target="_blank" class="text-slate-700 hover:text-blue-primary font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-primary"><i class="fas fa-calendar-alt mr-1"></i> Calendario</a>
+                    <a href="#contacto" class="text-slate-700 hover:text-blue-primary font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-primary">Contacto</a>
+                </div>
+
+                <div class="hidden lg:block">
+                    <a href="#contacto" class="bg-gradient-to-r from-blue-primary to-blue-hover hover:from-blue-hover hover:to-blue-900 text-white px-6 py-3 rounded-xl font-semibold shadow-blue hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
                         Agendar Asesoría
                     </a>
                 </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors" aria-label="Abrir menú">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MENÚ MÓVIL -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-slate-200 shadow-lg">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#inicio" class="block py-3 text-slate-700 hover:text-blue-primary font-medium border-l-4 border-transparent hover:border-blue-primary pl-4 transition-all">Inicio</a>
+                <a href="#servicios" class="block py-3 text-slate-700 hover:text-blue-primary font-medium border-l-4 border-transparent hover:border-blue-primary pl-4 transition-all">Servicios</a>
+                <a href="#urgente" class="block py-3 text-red-600 hover:text-red-700 font-semibold border-l-4 border-transparent hover:border-red-500 pl-4 transition-all"><i class="fas fa-exclamation-circle mr-2"></i> Servicios Urgentes</a>
+                <a href="#socios" class="block py-3 text-slate-700 hover:text-blue-primary font-medium border-l-4 border-transparent hover:border-blue-primary pl-4 transition-all">Socios</a>
+                <a href="#actualidad" class="block py-3 text-slate-700 hover:text-blue-primary font-medium border-l-4 border-transparent hover:border-blue-primary pl-4 transition-all">Actualidad</a>
+                <a href="https://fiscallegalconsultores.github.io/Calendario/" target="_blank" class="block py-3 text-slate-700 hover:text-blue-primary font-medium border-l-4 border-transparent hover:border-blue-primary pl-4 transition-all"><i class="fas fa-calendar-alt mr-2 text-blue-primary"></i> Calendario</a>
+                <a href="#contacto" class="block py-3 text-slate-700 hover:text-blue-primary font-medium border-l-4 border-transparent hover:border-blue-primary pl-4 transition-all">Contacto</a>
+                <a href="https://wa.me/5215632298111" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-semibold shadow-lg mt-4">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION (sin botón de calendario) -->
+    <!-- HERO SECTION -->
     <section id="inicio" class="relative bg-navy-900 text-white overflow-hidden">
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-20 left-10 w-72 h-72 bg-blue-primary rounded-full blur-3xl"></div>
@@ -92,25 +115,36 @@
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Content -->
                 <div class="space-y-8 animate-fade-in">
                     <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
                         <i class="fas fa-shield-alt text-blue-light"></i>
                         <span class="text-sm font-medium text-slate-200">Especialistas en Derecho Fiscal y Contabilidad Forense</span>
                     </div>
+                    
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight">
                         Consultoría <span class="text-blue-light">Fiscal y Legal</span>
                     </h1>
+                    
                     <p class="text-lg text-slate-300 leading-relaxed max-w-xl">
                         En FLC Abogados Tributarios, nuestros socios fundadores combinan experiencia operativa y formación especializada en derecho fiscal para proteger su patrimonio con estrategia técnica probada y rigor jurídico.
                     </p>
+                    
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://fiscallegalconsultores.github.io/Calendario/" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-blue-primary to-blue-hover hover:from-blue-hover hover:to-blue-900 text-white px-8 py-4 rounded-xl font-semibold shadow-blue hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fas fa-calendar-check mr-2"></i> Agendar Cita en Calendario
+                        </a>
                         <a href="#contacto" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold border border-white/30 hover:border-white/50 transition-all duration-300">
-                            Enviar Consulta <i class="fas fa-envelope ml-2 text-sm"></i>
+                            Enviar Consulta
+                            <i class="fas fa-envelope ml-2 text-sm"></i>
                         </a>
                         <a href="#servicios" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold border border-white/30 hover:border-white/50 transition-all duration-300">
                             Explorar Servicios
                         </a>
                     </div>
+                    
+                    <!-- Trust Indicators -->
                     <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
                         <div class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-light"></i><span class="text-sm text-slate-300">Devoluciones ISR/IVA</span></div>
                         <div class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-light"></i><span class="text-sm text-slate-300">EFOS/EDOS</span></div>
@@ -120,11 +154,13 @@
                         <div class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-light"></i><span class="text-sm text-slate-300">PRODECON</span></div>
                     </div>
                 </div>
+                
+                <!-- Hero Visual -->
                 <div class="hidden lg:block relative">
                     <div class="absolute -inset-4 bg-gradient-to-r from-blue-primary/20 to-navy-800/20 rounded-3xl blur-2xl"></div>
                     <div class="relative">
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-primary/30">
-                            <img src="img/socios/hero-flc.jpg" alt="FLC Abogados Tributarios" class="w-full h-[520px] object-cover">
+                            <img src="img/socios/hero-flc.jpg" alt="FLC Abogados Tributarios - Consultoría Fiscal Profesional" class="w-full h-[520px] object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-6">
                                 <div class="flex items-center space-x-3 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
@@ -144,53 +180,42 @@
         </div>
     </section>
 
-    <!-- SERVICIOS URGENTES: Tres tarjetas (textos de botones corregidos a "Solicitar evaluación") -->
+    <!-- SERVICIOS URGENTES -->
     <section id="urgente" class="py-16 bg-gradient-to-r from-red-700 to-red-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full mb-4">
-                    <i class="fas fa-exclamation-triangle text-yellow-300"></i>
-                    <span class="font-semibold">SERVICIOS URGENTES</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold">Protección Inmediata para su Empresa</h2>
-                <p class="text-red-100 text-lg mt-4 max-w-2xl mx-auto">Actuamos en horas, no en días. Especialistas con experiencia interna en el SAT.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Tarjeta 1: Art. 69-B EFOS/EDOS -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-file-invoice text-white text-2xl"></i>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full mb-4">
+                        <i class="fas fa-exclamation-triangle text-yellow-300"></i>
+                        <span class="font-semibold">SERVICIO URGENTE</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Listados EFOS/EDOS (Art. 69-B CFF)</h3>
-                    <p class="text-red-100 text-sm mb-4">Presunción de operaciones inexistentes. Plazo fatal: 30 días hábiles.</p>
-                    <p class="text-white text-sm leading-relaxed mb-4">Desvirtuamos la presunción con evidencia forense y defensa técnico-jurídica. Evite la inhabilitación y el bloqueo de facturación.</p>
-                    <a href="#contacto" class="inline-flex items-center text-white font-semibold text-sm border-b border-white/50 hover:border-white">Solicitar evaluación <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                </div>
-                <!-- Tarjeta 2: Restricción de sellos digitales (CSD) - botón "Solicitar evaluación" -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-lock text-white text-2xl"></i>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">¿Protección urgente ante listados del Art. 69-B del CFF?</h2>
+                    <p class="text-red-100 text-lg mb-6">Estrategia integral para desvirtuar presunciones de operaciones inexistentes y evitar inclusión en listados EFOS/EDOS. Actúe antes de que sea demasiado tarde.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contacto" class="inline-flex items-center justify-center bg-white text-red-700 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fas fa-phone-alt mr-2"></i> Solicitar Evaluación Urgente
+                        </a>
+                        <a href="https://wa.me/5215632298111" class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Urgente
+                        </a>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Restricción de Sellos Digitales (CSD)</h3>
-                    <p class="text-red-100 text-sm mb-4">La autoridad cancela o suspende su certificado de sello digital.</p>
-                    <p class="text-white text-sm leading-relaxed mb-4">Gestionamos la reposición inmediata del CSD, regularización y defensa ante el SAT para que vuelva a emitir facturas sin interrupciones.</p>
-                    <a href="#contacto" class="inline-flex items-center text-white font-semibold text-sm border-b border-white/50 hover:border-white">Solicitar evaluación <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
                 </div>
-                <!-- Tarjeta 3: Congelamiento de cuentas bancarias - botón "Solicitar evaluación" -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-university text-white text-2xl"></i>
+                <div class="hidden md:block">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <h3 class="text-xl font-bold mb-4">⏰ Tiempo límite: 30 días hábiles</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-yellow-300 mt-1 mr-3"></i><span>Análisis forense inmediato</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-yellow-300 mt-1 mr-3"></i><span>Recopilación de evidencia documental</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-yellow-300 mt-1 mr-3"></i><span>Redacción técnica-jurídica especializada</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-yellow-300 mt-1 mr-3"></i><span>Seguimiento personalizado 24/7</span></li>
+                        </ul>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Cuentas Bancarias Congeladas</h3>
-                    <p class="text-red-100 text-sm mb-4">Embargo precautorio o definitivo por créditos fiscales.</p>
-                    <p class="text-white text-sm leading-relaxed mb-4">Descongelamos sus cuentas mediante medidas cautelares, garantías y amparo. Evite la asfixia financiera con nuestra estrategia exprés.</p>
-                    <a href="#contacto" class="inline-flex items-center text-white font-semibold text-sm border-b border-white/50 hover:border-white">Solicitar evaluación <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- OFICINAS (sin cambios) -->
+    <!-- OFICINAS -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -216,6 +241,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="h-72 overflow-hidden relative">
                         <div class="absolute inset-0 bg-navy-900 opacity-20 group-hover:opacity-10 transition-opacity z-10"></div>
@@ -238,7 +264,7 @@
         </div>
     </section>
 
-    <!-- SERVICIOS (sin cambios) -->
+    <!-- SERVICIOS -->
     <section id="servicios" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -247,7 +273,6 @@
                 <p class="text-lg text-slate-600 max-w-3xl mx-auto">Soluciones integrales en materia fiscal, diseñadas para proteger, optimizar y defender el patrimonio de su empresa.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Ítems de servicios (se mantienen igual) -->
                 <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="bg-gradient-to-br from-blue-primary to-blue-hover text-white w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-3xl shadow-blue group-hover:scale-110 transition-transform duration-300"><i class="fas fa-chart-line"></i></div>
                     <h3 class="text-xl font-bold text-navy-900 mb-4 group-hover:text-blue-primary transition-colors">Consultoría y Planeación</h3>
@@ -288,7 +313,7 @@
         </div>
     </section>
 
-    <!-- SOCIOS (correos actualizados para los dos últimos) -->
+    <!-- SOCIOS -->
     <section id="socios" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -297,7 +322,6 @@
                 <p class="text-lg text-slate-600 max-w-3xl mx-auto">Un equipo multidisciplinario que combina experiencia operativa, litigio estratégico y cumplimiento normativo.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Socio 1 -->
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -320,7 +344,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Socio 2 -->
+
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -343,7 +367,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Socio 3 (correo actualizado) -->
+
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -365,7 +389,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Socio 4 (correo actualizado) -->
+
                 <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-primary transition-all duration-300 transform hover:-translate-y-2 group">
                     <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center p-8">
                         <div class="relative">
@@ -391,7 +415,7 @@
         </div>
     </section>
 
-    <!-- ACTUALIDAD FISCAL (con circulares desplegables) -->
+    <!-- ACTUALIDAD -->
     <section id="actualidad" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -404,9 +428,9 @@
                         <div class="flex items-center justify-between mb-4"><span class="bg-navy-900 text-blue-light px-3 py-1 rounded-full text-xs font-semibold">EFOS/EDOS</span><span class="text-slate-500 text-sm">May 2026</span></div>
                         <h3 class="text-lg font-bold text-navy-900 mb-3 group-hover:text-blue-primary transition-colors">Defensa efectiva ante el listado del Art. 69-B CFF</h3>
                         <p class="text-slate-600 text-sm mb-4 leading-relaxed">Estrategias probadas para desvirtuar presunciones de operaciones inexistentes y evitar consecuencias penales.</p>
-                        <button class="leer-circular-btn inline-flex items-center text-blue-primary hover:text-blue-hover font-semibold text-sm"><span>Leer Circular</span><i class="fas fa-arrow-right ml-2 text-xs transition-transform"></i></button>
-                        <div class="circular-content hidden mt-4 pt-4 border-t border-slate-200 text-sm text-slate-600">
-                            <p><strong>Contenido detallado:</strong> La defensa efectiva se basa en la recopilación de pruebas documentales (contratos, facturas, manifestaciones de proveedores) y la presentación de una declaración complementaria con sustento técnico. Nuestro equipo elabora un expediente forense para desvirtuar las presunciones y evitar la permanencia en listados. Actuar dentro del plazo de 30 días es crítico.</p>
+                        <button class="leer-circular-btn inline-flex items-center text-blue-primary hover:text-blue-hover font-semibold text-sm"><span>Leer Circular</span><i class="fas fa-arrow-right ml-2 text-xs"></i></button>
+                        <div class="circular-content mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-gray-600 text-sm mb-3">Contenido detallado: La defensa efectiva se basa en la recopilación de pruebas documentales (contratos, facturas, manifestaciones de proveedores) y la presentación de una declaración complementaria con sustento técnico. Nuestro equipo elabora un expediente forense para desvirtuar las presunciones y evitar la permanencia en listados. Actuar dentro del plazo de 30 días es crítico.</p>
                         </div>
                     </div>
                 </article>
@@ -416,8 +440,8 @@
                         <h3 class="text-lg font-bold text-navy-900 mb-3 group-hover:text-blue-primary transition-colors">Criterios recientes del SAT para devoluciones de IVA</h3>
                         <p class="text-slate-600 text-sm mb-4 leading-relaxed">Actualización sobre requisitos documentales y estrategias para acelerar la recuperación de saldos a favor.</p>
                         <button class="leer-circular-btn inline-flex items-center text-blue-primary hover:text-blue-hover font-semibold text-sm"><span>Leer Circular</span><i class="fas fa-arrow-right ml-2 text-xs"></i></button>
-                        <div class="circular-content hidden mt-4 pt-4 border-t border-slate-200 text-sm text-slate-600">
-                            <p><strong>Contenido detallado:</strong> El SAT exige dictámenes de contador público registrado y documentación de comprobantes CFDI 4.0. Se recomienda preparar una solicitud de devolución con análisis de proporcionalidad y, ante negativa injustificada, promover recurso de revocación o juicio de nulidad.</p>
+                        <div class="circular-content mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-gray-600 text-sm mb-3">Contenido detallado: El SAT exige dictámenes de contador público registrado y documentación de comprobantes CFDI 4.0. Se recomienda preparar una solicitud de devolución con análisis de proporcionalidad y, ante negativa injustificada, promover recurso de revocación o juicio de nulidad.</p>
                         </div>
                     </div>
                 </article>
@@ -427,8 +451,8 @@
                         <h3 class="text-lg font-bold text-navy-900 mb-3 group-hover:text-blue-primary transition-colors">Cómo prepararse para una revisión de gabinete electrónica</h3>
                         <p class="text-slate-600 text-sm mb-4 leading-relaxed">Checklist práctico para organizar su información contable-fiscal y responder requerimientos oportunamente.</p>
                         <button class="leer-circular-btn inline-flex items-center text-blue-primary hover:text-blue-hover font-semibold text-sm"><span>Leer Circular</span><i class="fas fa-arrow-right ml-2 text-xs"></i></button>
-                        <div class="circular-content hidden mt-4 pt-4 border-t border-slate-200 text-sm text-slate-600">
-                            <p><strong>Contenido detallado:</strong> La revisión de gabinete exige contar con contabilidad electrónica, papeles de trabajo y justificaciones de deducciones. Implementar un expediente digital actualizado y responder en tiempo y forma reduce riesgos de créditos fiscales.</p>
+                        <div class="circular-content mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-gray-600 text-sm mb-3">Contenido detallado: La revisión de gabinete exige contar con contabilidad electrónica, papeles de trabajo y justificaciones de deducciones. Implementar un expediente digital actualizado y responder en tiempo y forma reduce riesgos de créditos fiscales.</p>
                         </div>
                     </div>
                 </article>
@@ -436,7 +460,7 @@
         </div>
     </section>
 
-    <!-- FAQ CON RESPUESTAS COMPLETAS Y PROFESIONALES (todas las preguntas respondidas) -->
+    <!-- FAQ (10 preguntas) -->
     <section class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -444,91 +468,259 @@
                 <div class="w-24 h-1 bg-blue-primary mx-auto mb-6"></div>
             </div>
             <div class="space-y-4">
-                <!-- 1. EFOS/EDOS -->
+                <!-- Pregunta 1 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Qué hacer si mi empresa aparece en el listado de EFOS/EDOS del Art. 69-B CFF?</span>
+                        <span class="font-semibold text-navy-900 pr-4">¿Por qué es una ventaja que sus socios sean exfuncionarios del SAT?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Actúe inmediatamente:</strong> Tiene solo 30 días hábiles para desvirtuar la presunción. Nuestro equipo (integrado por exempleados del SAT) analiza su caso en menos de 24 horas, recopila evidencia contundente y presenta la defensa técnico-jurídica más sólida. <strong>No ignore la notificación</strong>; contáctenos ahora para una evaluación urgente sin costo.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">Es como tener un guía que ya conoce el camino en un terreno donde todos los demás van a ciegas.</p>
+                            <p><strong>¿Qué sabemos que otros no saben?</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li><strong>Cómo piensa el auditor:</strong> Sabemos qué busca, por dónde empieza a revisar y qué lo hace sospechar.</li>
+                                <li><strong>El lenguaje interno:</strong> Entendemos sus requerimientos y sabemos cómo responderles para que los acepten.</li>
+                                <li><strong>Los errores más comunes:</strong> Preparamos su defensa para evitar caer en ellos.</li>
+                            </ul>
+                            <p><strong>¿Qué significa esto para usted?</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Su caso se maneja con mayor precisión</li>
+                                <li>En menos tiempo (no perdemos meses adivinando)</li>
+                                <li>Con menor costo (usted no paga por nuestros "errores de aprendizaje")</li>
+                            </ul>
+                            <p class="font-semibold text-blue-primary">Beneficio emocional: Tranquilidad de saber que quien lo defiende no está improvisando. Está aplicando años de experiencia dentro del propio SAT.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 2. Devolución IVA -->
+
+                <!-- Pregunta 2 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Cuánto tiempo tarda una devolución de IVA?</span>
+                        <span class="font-semibold text-navy-900 pr-4">¿Cuánto cuestan sus servicios y cómo se manejan los honorarios?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>El plazo legal es de 40 días hábiles,</strong> pero con nuestra gestión especializada (basada en el conocimiento de los criterios internos del SAT) reducimos significativamente los tiempos. Anticipamos observaciones y damos seguimiento proactivo diario. Nuestra <strong>tasa de éxito supera el 90%</strong> en devoluciones gestionadas por FLC.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">Sabemos que esta es la pregunta más importante. Le vamos a ser claros, sin letras chiquitas ni costos ocultos.</p>
+                            <p>Nuestros honorarios son competitivos (acordes al promedio del mercado), pero lo que realmente importa es cómo se estructura el pago para que usted no arriesgue:</p>
+                            <p><strong>Modelo de 3 pasos:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li><strong>Paso 1:</strong> Diagnóstico preliminar - GRATIS</li>
+                                <li><strong>Paso 2:</strong> Anticipo para arrancar el trabajo - Porcentaje acordado</li>
+                                <li><strong>Paso 3:</strong> Resto del pago - Solo al éxito (si logramos un resultado favorable)</li>
+                            </ul>
+                            <p><strong>¿Qué significa "solo al éxito"?</strong> Si logramos su devolución, anulamos el crédito fiscal o conseguimos un acuerdo favorable, usted paga el resto. Si no hay éxito, usted NO paga ese resto.</p>
+                            <p><strong>¿Por qué trabajamos así?</strong> Porque confiamos en nuestro trabajo y queremos que usted confíe en nosotros. El éxito de su caso es también nuestro compromiso.</p>
+                            <p class="font-semibold text-blue-primary">Beneficio clave: Usted no asume todo el riesgo financiero. Nosotros nos comprometemos con su resultado.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 3. Acuerdos conclusivos -->
+
+                <!-- Pregunta 3 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Es viable negociar con el SAT antes de llegar a juicio?</span>
+                        <span class="font-semibold text-navy-900 pr-4">¿Qué es un diagnóstico fiscal y por qué es importante?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>¡Absolutamente!</strong> Los Acuerdos Conclusivos ante PRODECON son la vía más rápida y económica. Resolvemos su controversia en semanas, con ahorros de hasta 60% en costos legales. Nuestros socios (con amplia experiencia en litigio y exfuncionarios) conocen los criterios de negociación y logran los mejores resultados.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">Imagine que va al médico cada tres años y solo cuando ya le duele algo. Así es como la mayoría trata su salud fiscal.</p>
+                            <p>Un diagnóstico fiscal es como una revisión médica completa de su empresa: detectamos problemas antes de que duelan (antes de que llegue una auditoría), encontramos oportunidades para pagar menos impuestos (legalmente) y le damos tranquilidad.</p>
+                            <p><strong>¿Qué revisamos?</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Sus declaraciones de impuestos (ISR, IVA)</li>
+                                <li>Su contabilidad y facturación</li>
+                                <li>Riesgos de que el SAT lo audite</li>
+                                <li>Oportunidades de ahorro que está desperdiciando</li>
+                            </ul>
+                            <p><strong>¿Qué recibe usted?</strong> Un informe claro, sin tecnicismos, que le dice: dónde está el peligro, cómo corregirlo y cómo puede ahorrar.</p>
+                            <p>Y lo mejor: el diagnóstico inicial es SIN COSTO. Así usted nos conoce, ve nuestro valor y decide si seguimos. Sin riesgo para usted.</p>
+                            <p class="font-semibold text-blue-primary">Ventaja FLC: Aplicamos nuestra experiencia como exauditores para identificar los mismos puntos que revisaría el SAT.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 4. Diagnóstico fiscal -->
+
+                <!-- Pregunta 4 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Qué incluye un diagnóstico fiscal integral y cuánto tiempo toma?</span>
+                        <span class="font-semibold text-navy-900 pr-4">¿Vale la pena contratar un análisis contable forense antes de que el SAT me audite?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Revisión 360° de su cumplimiento fiscal:</strong> analizamos declaraciones, contabilidad electrónica, riesgos de auditoría y oportunidades de optimización. Entregamos un reporte ejecutivo con hallazgos y recomendaciones en <strong>5 a 10 días hábiles</strong>. Ideal para prevenir contingencias antes de que el SAT actúe. Contamos con especialistas que conocen el “modo de operar” de la autoridad.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">Imagínese esto: El SAT llega a auditar su empresa. Si ellos encuentran errores, usted enfrenta multas, recargos y posiblemente juicios. Usted va a la defensiva.</p>
+                            <p>Ahora imagine esto otro: Usted contrata a un contador con experiencia forense antes de que llegue el SAT. Ese profesional revisa todo, encuentra errores, los corrige, y le entrega un informe confidencial que dice: "Esta empresa tiene estos puntos débiles y así se corrigen".</p>
+                            <p>Cuando el SAT llegue, usted ya corrigió los errores y va preparado.</p>
+                            <p><strong>¿Cuál opción prefiere?</strong></p>
+                            <p><strong>¿Qué hace FLC diferente?</strong> Nuestros contadores tienen experiencia forense y conocen los criterios que usan los auditores del SAT. No es cualquier contador; es alguien que sabe lo que la autoridad va a buscar.</p>
+                            <p><strong>Resultado:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Tranquilidad de que ya corrigió los problemas graves</li>
+                                <li>Ahorro porque corregir antes es más barato que pagar multas</li>
+                                <li>El informe le sirve como hoja de ruta para estar en orden</li>
+                            </ul>
+                            <p class="font-semibold text-blue-primary">Dato clave: El costo de este análisis es menor comparado con el riesgo de un crédito fiscal fuerte.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 5. Ventajas FLC -->
+
+                <!-- Pregunta 5 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Qué ventajas tiene FLC frente a otros despachos fiscales?</span>
+                        <span class="font-semibold text-navy-900 pr-4">¿Cómo puedo evitar que mi empresa salga en un listado de EFOS/EDOS en el futuro?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Experiencia interna en el SAT:</strong> nuestros socios fundadores trabajaron en áreas clave del Servicio de Administración Tributaria. Esto nos permite anticipar estrategias de defensa, conocer los lenguajes de los requerimientos y detectar puntos débiles del contribuyente con <strong>mayor efectividad y menor costo</strong> que un despacho tradicional. Además, integramos lo contable y lo legal en un solo equipo.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">Primero, entendamos qué es EFOS/EDOS:</p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li><strong>EFOS = Empresas que Facturan Operaciones Simuladas.</strong> El SAT sospecha que usted emite facturas sin que exista una operación real detrás.</li>
+                                <li><strong>EDOS = Empresas que Destinan Operaciones Simuladas.</strong> El SAT sospecha que usted recibe facturas de proveedores que no le entregaron realmente el producto o servicio.</li>
+                            </ul>
+                            <p><strong>¿Por qué salen las empresas en estos listados?</strong> Principalmente por dos razones:</p>
+                            <ol class="list-decimal list-inside space-y-1 ml-4">
+                                <li>Por emitir facturas a empresas que después resultan ser fantasma (usted se vuelve EFOS)</li>
+                                <li>Por recibir facturas de proveedores que resultan ser fantasma (usted se vuelve EDOS)</li>
+                            </ol>
+                            <p>En ambos casos, el SAT presume que usted sabía o debió saber que esas operaciones no eran reales.</p>
+                            <p><strong>La solución (sencilla):</strong> Nosotros le diseñamos un checklist de proveedores muy fácil de seguir. Incluye:</p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Verificar que su proveedor tenga "opinión de cumplimiento" positiva en la página del SAT</li>
+                                <li>Guardar contratos y órdenes de compra</li>
+                                <li>Tener evidencia física de que le entregaron el producto o servicio (firmas de recibido, fotos, guías de envío)</li>
+                            </ul>
+                            <p><strong>¿Por qué FLC?</strong> Conocemos las alertas internas que encienden los sistemas del SAT. Le enseñamos qué evitar para que nunca lo marquen.</p>
+                            <p class="font-semibold text-blue-primary">Inversión pequeña: Lo que cuesta implementar esto es mucho menor que lo que cuesta salir de un listado después.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 6. Peritaje contable -->
+
+                <!-- Pregunta 6 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Es recomendable contratar un perito contable antes de una auditoría del SAT?</span>
+                        <span class="font-semibold text-navy-900 pr-4">Mi empresa salió en el listado de EFOS/EDOS (Art. 69-B). ¿Qué hago?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Sí, es una decisión estratégica.</strong> Un peritaje contable preventivo identifica inconsistencias antes de que la autoridad las detecte, prepara su defensa con evidencia técnica sólida y puede inclinar la balanza a su favor en un litigio futuro. Nuestros peritos tienen reconocimiento ante tribunales federales.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">Que el SAT le notifique que está en este listado es una situación muy seria. Significa que la autoridad presume (sin estar segura) que usted facturó con empresas fantasma. Las consecuencias inmediatas son: bloqueo de su facturación (CSD) y posible congelamiento de sus cuentas bancarias.</p>
+                            <p><strong>¿Qué hacer AHORA?</strong> Tiene solo 30 días hábiles para demostrar que sus operaciones son reales. Pasado ese plazo, las consecuencias empeoran y es más difícil salir del listado.</p>
+                            <p><strong>¿Por qué FLC es su mejor opción?</strong> Nuestros socios trabajaron dentro del SAT. No "creemos" cómo piensa la autoridad: lo sabemos. Conocemos exactamente qué pruebas piden, cómo las revisan y qué errores cometen otros despachos al presentarlas.</p>
+                            <p><strong>Lo que hacemos por usted:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Analizamos su caso con urgencia</li>
+                                <li>Revisamos contratos, facturas, pagos y evidencias de entregas</li>
+                                <li>Preparamos y presentamos su defensa técnico-jurídica</li>
+                                <li>Lo sacamos del listado antes de que sea tarde</li>
+                            </ul>
+                            <p class="font-semibold text-blue-primary">Ventaja exclusiva: Entendemos el "lenguaje interno" del SAT. Eso se traduce en menos estrés para usted y más efectividad.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 7. Crédito fiscal determinado -->
+
+                <!-- Pregunta 7 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Qué pasa si ya tengo un crédito fiscal determinado, aún puedo defenderme?</span>
+                        <span class="font-semibold text-navy-900 pr-4">El SAT me bloqueó los sellos digitales (CSD) o congeló mis cuentas bancarias. ¿Qué hago?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Por supuesto.</strong> Un crédito fiscal determinado no es una sentencia definitiva. Usted cuenta con 30 días hábiles para interponer recurso de revocación y, posteriormente, juicio de nulidad ante el TFJA. Incluso con el crédito ya firme, existen vías extraordinarias (amparo, desconocimiento) que han permitido a nuestros clientes reducir o extinguir montos millonarios. Evaluamos su caso sin costo.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-red-600">Esto es urgente. Su negocio no puede operar sin facturar o sin acceso a su dinero.</p>
+                            <p><strong>¿Qué pasó?</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li><strong>Bloqueo de sellos (CSD):</strong> El SAT suspendió su certificado de sello digital. Usted no puede emitir facturas. Su negocio se para.</li>
+                                <li><strong>Congelamiento de cuentas:</strong> El SAT ordenó a su banco bloquear sus cuentas. Usted no puede pagar nómina, proveedores ni cobrar a clientes.</li>
+                            </ul>
+                            <p>Estas medidas suelen ser "precautorias", es decir, el SAT las aplica mientras investiga. Pero mientras dure la investigación, su empresa se asfixia.</p>
+                            <p><strong>¿Qué hay que hacer?</strong> Actuar de inmediato. Cada día que pasa sin facturar o sin acceso a su dinero es un día perdido.</p>
+                            <p><strong>Servicio urgente de FLC (respuesta en menos de 24 horas):</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Si el CSD está bloqueado: Regularizamos su situación fiscal y presentamos la documentación correcta para que el SAT reactive su facturación lo antes posible</li>
+                                <li>Si las cuentas están congeladas: Interponemos los recursos legales correspondientes (recurso de revocación y, en su caso, amparo) para que se ordene liberar su dinero</li>
+                            </ul>
+                            <p><strong>¿Por qué FLC puede resolver esto?</strong> Al conocer los procedimientos internos del SAT, sabemos exactamente qué documentos presentar y ante qué área. Eso hace que la solución sea mucho más rápida que con cualquier abogado que no tenga esa experiencia.</p>
+                            <p class="font-semibold text-blue-primary">No espere. Entre más tiempo pase, más difícil será reactivar su operación. Contáctenos hoy mismo.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 8. Honorarios -->
+
+                <!-- Pregunta 8 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Cuánto cuestan sus servicios y cómo manejan los honorarios?</span>
+                        <span class="font-semibold text-navy-900 pr-4">El SAT ya me notificó un crédito fiscal. ¿Ya perdí?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Honorarios claros y personalizados:</strong> cotizamos después de un diagnóstico inicial sin costo. Trabajamos por proyecto, por etapa o con base en resultados. Sin costos ocultos. <strong>Más económico que litigar por su cuenta</strong> y con alta probabilidad de éxito debido a nuestra experiencia interna en el SAT.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">¡No! Un crédito fiscal (una notificación de que "debe" dinero) NO es una sentencia definitiva. Es solo el SAT diciendo: "Creemos que usted debe esto". Usted tiene derecho a defenderse.</p>
+                            <p><strong>Plazo clave:</strong> Tiene 30 días hábiles para impugnar. Después de ese plazo, se complica mucho.</p>
+                            <p><strong>Opciones legales que existen (cada una aplica según el caso):</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li><strong>Recurso de revocación:</strong> Impugnar ante el mismo SAT. Es un procedimiento administrativo, más rápido, pero la misma autoridad resuelve.</li>
+                                <li><strong>Juicio de nulidad:</strong> Llevar el caso ante un Tribunal Federal (TFJA). Es un juicio formal, más lento, pero ante un órgano independiente del SAT.</li>
+                                <li><strong>Acuerdo Conclusivo:</strong> Negociar con el SAT a través de la PRODECON para llegar a un acuerdo y evitar el juicio.</li>
+                            </ul>
+                            <p><strong>¿Qué hace FLC?</strong> Analizamos su caso sin costo y le recomendamos la mejor ruta según sus circunstancias específicas. Como conocemos al SAT por dentro, sabemos qué estrategia tiene más probabilidad de éxito en su caso particular.</p>
+                            <p><strong>Modelo de pago justo:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Anticipo para arrancar el trabajo</li>
+                                <li>El resto solo si logramos un resultado favorable</li>
+                            </ul>
+                            <p class="font-semibold text-blue-primary">Tranquilidad: Usted no está solo. Nosotros lo defendemos como si fuera nuestro propio caso.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 9. Nueva: Prevención EFOS -->
+
+                <!-- Pregunta 9 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Qué medidas preventivas recomienda FLC para evitar ser incluido en listados de empresas que simulan operaciones?</span>
+                        <span class="font-semibold text-navy-900 pr-4">¿Se puede negociar con el SAT para pagar menos y evitar un juicio?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Prevención activa:</strong> Verificación de proveedores (estatus fiscal, opinión de cumplimiento), contratos sólidos, respaldo de entregas y auditorías internas periódicas. Diseñamos un programa de cumplimiento fiscal para mitigar riesgos y evitar sorpresas del SAT. Nuestros socios, al haber trabajado en la autoridad, conocen los patrones que detonan las auditorías.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">¡Sí! Y es una herramienta muy poderosa que pocos contribuyentes conocen.</p>
+                            <p>Se llama <strong>Acuerdo Conclusivo</strong> y funciona así: usted acepta pagar una parte del crédito fiscal (el dinero que el SAT dice que debe) y la otra parte se la condonan. Además, evita años de juicio y gastos legales enormes.</p>
+                            <p><strong>¿Por qué funciona mejor con FLC?</strong> La negociación no es automática. El SAT solo acepta si usted presenta argumentos sólidos y pruebas contundentes. Como conocemos sus criterios internos (por haber estado ahí), sabemos qué decir y cómo decirlo para que acepten.</p>
+                            <p><strong>Lo que logramos:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Ahorro significativo en multas y recargos</li>
+                                <li>Resolución en semanas, no años</li>
+                                <li>Usted evita el desgaste de un juicio largo</li>
+                            </ul>
+                            <p class="font-semibold text-blue-primary">Dato clave: No todos los despachos saben hacer esto. Nosotros sí, porque conocemos al "rival".</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- 10. Nueva: Embargo de cuentas -->
+
+                <!-- Pregunta 10 -->
                 <div class="bg-slate-50 rounded-xl shadow-md border border-slate-100 overflow-hidden">
                     <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100 transition-colors focus:outline-none" aria-expanded="false">
-                        <span class="font-semibold text-navy-900 pr-4">¿Puede el SAT embargar cuentas bancarias sin previo aviso y cómo detenerlo?</span>
+                        <span class="font-semibold text-navy-900 pr-4">¿Cuánto tarda el SAT en devolver el IVA a favor?</span>
                         <i class="fas fa-chevron-down text-blue-primary transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content px-6 pb-5 hidden"><p class="text-slate-600 leading-relaxed"><strong>Sí, procede el embargo precautorio o definitivo</strong> si existe crédito fiscal firme o peligro en la demora. Para detenerlo, interponemos recurso de revocación, solicitamos suspensión mediante garantía y promovemos amparo. Actuamos en urgencia para descongelar sus cuentas y defender los derechos del contribuyente mediante medidas cautelares.</p></div>
+                    <div class="faq-content px-6 pb-5 hidden">
+                        <div class="text-slate-600 leading-relaxed space-y-3">
+                            <p class="font-semibold text-navy-900">Por ley, el SAT tiene 40 días hábiles para pagarle. Pero si su solicitud tiene cualquier error o falta de información, pueden rechazarla o retrasarla varios meses.</p>
+                            <p><strong>¿Por qué tantos despachos fallan?</strong> Porque no conocen los filtros automáticos que usa el SAT para revisar solicitudes. Un error en un número, un formato incorrecto o un documento faltante = rechazo o retraso.</p>
+                            <p><strong>¿Qué hace diferente a FLC?</strong> Al haber trabajado dentro del SAT, conocemos esos filtros. Preparamos su solicitud desde el principio bien hecha, anticipando las observaciones más comunes.</p>
+                            <p><strong>Resultado para usted:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Su solicitud llega completa y correcta desde la primera vez</li>
+                                <li>Menor probabilidad de rechazo o retraso</li>
+                                <li>Seguimiento continuo, usted no tiene que estar encima</li>
+                            </ul>
+                            <p class="font-semibold text-blue-primary">Ventaja clave: Mientras otros esperan meses sin saber qué pasa, nosotros le damos certeza y seguimiento constante.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACTO (select actualizado y sin cuadro azul redundante) -->
+    <!-- CONTACTO -->
     <section id="contacto" class="py-24 bg-navy-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -536,14 +728,29 @@
                 <div class="w-24 h-1 bg-blue-primary mx-auto mb-6"></div>
                 <p class="text-lg text-slate-300 max-w-3xl mx-auto">Complete el formulario y un especialista de FLC se contactará con usted en menos de 24 horas hábiles.</p>
             </div>
+
             <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Formulario Formspree -->
                 <div class="bg-white rounded-2xl p-8 shadow-xl">
                     <form id="contactForm" class="space-y-6" action="https://formspree.io/f/mqejrqyy" method="POST">
-                        <div><label for="nombre" class="block text-sm font-semibold text-slate-700 mb-2">Nombre completo *</label><input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="Su nombre completo"></div>
-                        <div><label for="empresa" class="block text-sm font-semibold text-slate-700 mb-2">Empresa *</label><input type="text" id="empresa" name="empresa" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="Nombre de su empresa"></div>
-                        <div><label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Correo electrónico *</label><input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="correo@empresa.com"></div>
-                        <div><label for="telefono" class="block text-sm font-semibold text-slate-700 mb-2">Teléfono</label><input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="(55) 0000-0000"></div>
-                        <div><label for="servicio" class="block text-sm font-semibold text-slate-700 mb-2">Servicio de interés</label>
+                        <div>
+                            <label for="nombre" class="block text-sm font-semibold text-slate-700 mb-2">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="Su nombre completo">
+                        </div>
+                        <div>
+                            <label for="empresa" class="block text-sm font-semibold text-slate-700 mb-2">Empresa *</label>
+                            <input type="text" id="empresa" name="empresa" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="Nombre de su empresa">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="correo@empresa.com">
+                        </div>
+                        <div>
+                            <label for="telefono" class="block text-sm font-semibold text-slate-700 mb-2">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900" placeholder="(55) 0000-0000">
+                        </div>
+                        <div>
+                            <label for="servicio" class="block text-sm font-semibold text-slate-700 mb-2">Servicio de interés</label>
                             <select id="servicio" name="servicio" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900 bg-white">
                                 <option value="">Seleccione una opción</option>
                                 <option value="consultoria">Consultoría y Planeación Fiscal</option>
@@ -555,45 +762,213 @@
                                 <option value="otro">Otro</option>
                             </select>
                         </div>
-                        <div><label for="mensaje" class="block text-sm font-semibold text-slate-700 mb-2">Mensaje *</label><textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900 resize-none" placeholder="Describa brevemente su consulta o situación fiscal..."></textarea></div>
-                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4"><div class="flex items-start space-x-3"><i class="fas fa-lock text-blue-primary mt-1"></i><p class="text-xs text-slate-700 leading-relaxed">Sus datos personales serán tratados conforme a nuestro <button type="button" onclick="openModal('privacyModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Aviso de Privacidad</button> para atender su solicitud de asesoría fiscal. No compartiremos su información con terceros ajenos a FLC.</p></div></div>
-                        <div class="space-y-3"><div class="flex items-start"><input type="checkbox" id="privacidad" name="privacidad" required class="mt-1 mr-3 w-4 h-4 accent-blue-primary cursor-pointer"><label for="privacidad" class="text-xs text-slate-700 cursor-pointer">He leído y acepto el <button type="button" onclick="openModal('privacyModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Aviso de Privacidad</button> de FLC Abogados Tributarios. *</label></div><div class="flex items-start"><input type="checkbox" id="terminos" name="terminos" required class="mt-1 mr-3 w-4 h-4 accent-blue-primary cursor-pointer"><label for="terminos" class="text-xs text-slate-700 cursor-pointer">He leído y acepto los <button type="button" onclick="openModal('termsModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Términos de Servicio</button>. *</label></div></div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-blue-primary to-blue-hover hover:from-blue-hover hover:to-blue-900 text-white font-semibold py-4 rounded-xl shadow-blue hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">Enviar Solicitud de Asesoría</button>
+                        <div>
+                            <label for="mensaje" class="block text-sm font-semibold text-slate-700 mb-2">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-primary focus:border-transparent outline-none transition-all text-slate-900 resize-none" placeholder="Describa brevemente su consulta o situación fiscal..."></textarea>
+                        </div>
+
+                        <!-- Aviso de Privacidad Simplificado -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-lock text-blue-primary mt-1"></i>
+                                <p class="text-xs text-slate-700 leading-relaxed">
+                                    Sus datos personales serán tratados conforme a nuestro 
+                                    <button type="button" onclick="openModal('privacyModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Aviso de Privacidad</button> 
+                                    para atender su solicitud de asesoría fiscal. No compartiremos su información con terceros ajenos a FLC Abogados Tributarios, salvo para cumplir con finalidades legales estrictamente necesarias.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Casillas de aceptación -->
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <input type="checkbox" id="privacidad" name="privacidad" required class="mt-1 mr-3 w-4 h-4 accent-blue-primary cursor-pointer">
+                                <label for="privacidad" class="text-xs text-slate-700 cursor-pointer">
+                                    He leído y acepto el 
+                                    <button type="button" onclick="openModal('privacyModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Aviso de Privacidad</button> 
+                                    de FLC Abogados Tributarios. *
+                                </label>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="terminos" name="terminos" required class="mt-1 mr-3 w-4 h-4 accent-blue-primary cursor-pointer">
+                                <label for="terminos" class="text-xs text-slate-700 cursor-pointer">
+                                    He leído y acepto los 
+                                    <button type="button" onclick="openModal('termsModal')" class="text-blue-primary font-semibold hover:text-blue-hover underline">Términos de Servicio</button> 
+                                    y descargo de responsabilidad del sitio. *
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-primary to-blue-hover hover:from-blue-hover hover:to-blue-900 text-white font-semibold py-4 rounded-xl shadow-blue hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                            Enviar Solicitud de Asesoría
+                        </button>
                         <p class="text-center text-xs text-slate-500">Los campos marcados con * son obligatorios.</p>
                     </form>
                 </div>
+
+                <!-- Info de Contacto -->
                 <div class="space-y-8">
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                         <h3 class="text-xl font-bold text-white mb-6">Contacto Directo FLC</h3>
-                        <div class="mb-6 pb-6 border-b border-white/20"><h4 class="font-semibold text-blue-light mb-2">Firma FLC Abogados Tributarios</h4><div class="space-y-2"><a href="mailto:fiscallegalconsultores@gmail.com" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm"><i class="fas fa-envelope w-5 mr-3 text-blue-light"></i>fiscallegalconsultores@gmail.com</a><a href="tel:+525632298111" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm"><i class="fas fa-phone w-5 mr-3 text-blue-light"></i>56-32-29-81-11</a><a href="https://wa.me/5215632298111" class="flex items-center text-slate-300 hover:text-green-400 transition-colors text-sm mt-2"><i class="fab fa-whatsapp w-5 mr-3 text-green-400"></i>WhatsApp: 56-32-29-81-11</a></div></div>
-                        <div class="space-y-6"><div><h4 class="font-semibold text-white mb-1">C.P. José Israel Cerbón Peña</h4><p class="text-blue-light text-sm mb-3">Especialista en Derecho Fiscal y Contabilidad Forense</p><div class="space-y-2"><a href="mailto:cerbonisrael@gmail.com" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm"><i class="fas fa-envelope w-5 mr-3 text-blue-light"></i>cerbonisrael@gmail.com</a><a href="tel:+525564045881" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm"><i class="fas fa-phone w-5 mr-3 text-blue-light"></i>55-64-04-58-81</a></div></div><div><h4 class="font-semibold text-white mb-1">Lic. Carlos Eduardo Pedroza</h4><p class="text-blue-light text-sm mb-3">Litigio Fiscal</p><div class="space-y-2"><a href="mailto:cpedrozabogado@outlook.com" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm"><i class="fas fa-envelope w-5 mr-3 text-blue-light"></i>cpedrozabogado@outlook.com</a><a href="https://wa.me/5215518096806" class="flex items-center text-slate-300 hover:text-green-400 transition-colors text-sm"><i class="fab fa-whatsapp w-5 mr-3 text-green-400"></i>WhatsApp: 55-18-09-68-06</a></div></div></div>
+                        
+                        <div class="mb-6 pb-6 border-b border-white/20">
+                            <h4 class="font-semibold text-blue-light mb-2">Firma FLC Abogados Tributarios</h4>
+                            <div class="space-y-2">
+                                <a href="mailto:fiscallegalconsultores@gmail.com" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm">
+                                    <i class="fas fa-envelope w-5 mr-3 text-blue-light"></i>
+                                    fiscallegalconsultores@gmail.com
+                                </a>
+                                <a href="tel:+525632298111" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm">
+                                    <i class="fas fa-phone w-5 mr-3 text-blue-light"></i>
+                                    56-32-29-81-11
+                                </a>
+                                <a href="https://wa.me/5215632298111" class="flex items-center text-slate-300 hover:text-green-400 transition-colors text-sm mt-2">
+                                    <i class="fab fa-whatsapp w-5 mr-3 text-green-400"></i>
+                                    WhatsApp: 56-32-29-81-11
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">C.P. José Israel Cerbón Peña</h4>
+                                <p class="text-blue-light text-sm mb-3">Especialista en Derecho Fiscal y Contabilidad Forense</p>
+                                <div class="space-y-2">
+                                    <a href="mailto:cerbonisrael@gmail.com" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm">
+                                        <i class="fas fa-envelope w-5 mr-3 text-blue-light"></i>
+                                        cerbonisrael@gmail.com
+                                    </a>
+                                    <a href="tel:+525564045881" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm">
+                                        <i class="fas fa-phone w-5 mr-3 text-blue-light"></i>
+                                        55-64-04-58-81
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Lic. Carlos Eduardo Pedroza</h4>
+                                <p class="text-blue-light text-sm mb-3">Litigio Fiscal</p>
+                                <div class="space-y-2">
+                                    <a href="mailto:cpedrozabogado@outlook.com" class="flex items-center text-slate-300 hover:text-blue-light transition-colors text-sm">
+                                        <i class="fas fa-envelope w-5 mr-3 text-blue-light"></i>
+                                        cpedrozabogado@outlook.com
+                                    </a>
+                                    <a href="https://wa.me/5215518096806" class="flex items-center text-slate-300 hover:text-green-400 transition-colors text-sm">
+                                        <i class="fab fa-whatsapp w-5 mr-3 text-green-400"></i>
+                                        WhatsApp: 55-18-09-68-06
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"><h4 class="font-semibold text-white mb-4">Oficina para reuniones</h4><div class="space-y-3 text-slate-300"><p class="flex items-start"><i class="fas fa-map-marker-alt w-5 mr-3 text-blue-light mt-0.5"></i><span>Ciudad de México, México<br><span class="text-xs text-slate-400">Cita previa requerida</span></span></p><p class="flex items-start"><i class="far fa-clock w-5 mr-3 text-blue-light mt-0.5"></i><span>Lunes a Viernes: 9:00 - 18:00 hrs</span></p><p class="text-blue-light font-semibold text-sm mt-2">Respuesta a consultas: &lt; 24 horas hábiles</p></div></div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <h4 class="font-semibold text-white mb-4">Oficina para reuniones</h4>
+                        <div class="space-y-3 text-slate-300">
+                            <p class="flex items-start"><i class="fas fa-map-marker-alt w-5 mr-3 text-blue-light mt-0.5"></i><span>Ciudad de México, México<br><span class="text-xs text-slate-400">Cita previa requerida</span></span></p>
+                            <p class="flex items-start"><i class="far fa-clock w-5 mr-3 text-blue-light mt-0.5"></i><span>Lunes a Viernes: 9:00 - 18:00 hrs</span></p>
+                            <p class="text-blue-light font-semibold text-sm mt-2">Respuesta a consultas: &lt; 24 horas hábiles</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-blue-primary to-blue-hover rounded-2xl p-6 shadow-blue">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-exclamation-triangle text-white text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">¿Caso urgente EFOS/EDOS?</h4>
+                                <p class="text-white/90 text-sm">Si recibió notificación del Art. 69-B CFF, contáctenos de inmediato para activar protocolo de defensa.</p>
+                                <p class="text-white/80 text-xs mt-2"><i class="fas fa-lock mr-1"></i> Confidencialidad garantizada</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER (sin cambios) -->
+    <!-- FOOTER -->
     <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="md:col-span-2">
-                    <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 bg-navy-900 rounded-xl flex items-center justify-center"><img src="img/socios/FLC.jpeg" alt="FLC" class="w-10 h-10 object-contain rounded-lg"></div><div><span class="block font-serif font-bold text-white text-xl">FLC</span><span class="block text-xs text-slate-500">Abogados Tributarios</span></div></div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-navy-900 rounded-xl flex items-center justify-center">
+                            <img src="img/socios/FLC.jpeg" alt="FLC" class="w-10 h-10 object-contain rounded-lg">
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-white text-xl">FLC</span>
+                            <span class="block text-xs text-slate-500">Abogados Tributarios</span>
+                        </div>
+                    </div>
                     <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">Firma especializada en Defensa Fiscal, Controversia Tributaria y Estrategia Corporativa. Protección integral del patrimonio empresarial.</p>
-                    <div class="flex space-x-4"><a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"><i class="fab fa-linkedin-in text-white"></i></a><a href="https://instagram.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"><i class="fab fa-instagram text-white"></i></a><a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-black rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 border border-slate-700"><svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://facebook.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"><i class="fab fa-facebook-f text-white"></i></a></div>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-white"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110" aria-label="Instagram"><i class="fab fa-instagram text-white"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-black rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 border border-slate-700" aria-label="X (Twitter)">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110" aria-label="Facebook"><i class="fab fa-facebook-f text-white"></i></a>
+                    </div>
                 </div>
-                <div><h4 class="text-white font-semibold mb-4">Servicios</h4><ul class="space-y-2 text-sm"><li><a href="#servicios" class="hover:text-blue-light transition-colors">Consultoría Fiscal</a></li><li><a href="#servicios" class="hover:text-blue-light transition-colors">Defensa y Controversia</a></li><li><a href="#servicios" class="hover:text-blue-light transition-colors">Devoluciones ISR/IVA</a></li><li><a href="#urgente" class="hover:text-red-400 transition-colors">EFOS / EDOS Art. 69-B</a></li></ul></div>
-                <div><h4 class="text-white font-semibold mb-4">Legal</h4><ul class="space-y-2 text-sm"><li><button onclick="openModal('privacyModal')" class="hover:text-blue-light transition-colors cursor-pointer">Aviso de Privacidad</button></li><li><button onclick="openModal('termsModal')" class="hover:text-blue-light transition-colors cursor-pointer">Términos de Servicio</button></li><li><a href="#contacto" class="hover:text-blue-light transition-colors">Contacto</a></li></ul></div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#servicios" class="hover:text-blue-light transition-colors">Consultoría Fiscal</a></li>
+                        <li><a href="#servicios" class="hover:text-blue-light transition-colors">Defensa y Controversia</a></li>
+                        <li><a href="#servicios" class="hover:text-blue-light transition-colors">Devoluciones ISR/IVA</a></li>
+                        <li><a href="#urgente" class="hover:text-red-400 transition-colors">EFOS / EDOS Art. 69-B</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><button onclick="openModal('privacyModal')" class="hover:text-blue-light transition-colors cursor-pointer">Aviso de Privacidad</button></li>
+                        <li><button onclick="openModal('termsModal')" class="hover:text-blue-light transition-colors cursor-pointer">Términos de Servicio</button></li>
+                        <li><a href="#contacto" class="hover:text-blue-light transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"><p class="text-sm text-slate-500">&copy; 2026 FLC Abogados Tributarios. Todos los derechos reservados.</p><p class="text-xs text-slate-600 text-center md:text-right">Despacho especializado en materia fiscal. No sustituye asesoría legal personalizada.</p></div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-sm text-slate-500">&copy; 2026 FLC Abogados Tributarios. Todos los derechos reservados.</p>
+                <p class="text-xs text-slate-600 text-center md:text-right">Despacho especializado en materia fiscal. No sustituye asesoría legal personalizada.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- MODALES -->
-    <div id="privacyModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4"><div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"><div class="flex justify-between items-center p-6 border-b border-slate-200"><h3 class="text-2xl font-bold text-navy-900">Aviso de Privacidad</h3><button onclick="closeModal('privacyModal')" class="text-slate-500 hover:text-slate-700 transition-colors"><i class="fas fa-times text-2xl"></i></button></div><div class="p-6 overflow-y-auto max-h-[calc(90vh-100px)]"><iframe src="img/socios/aviso-privacidad.pdf" class="w-full h-[60vh] rounded-lg border border-slate-200" title="Aviso de Privacidad"></iframe><div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200"><p class="text-sm text-blue-800 font-semibold mb-1">Nota:</p><p class="text-sm text-blue-700">Si el documento no se visualiza, puede solicitarlo directamente a fiscallegalconsultores@gmail.com</p></div></div></div></div>
-    <div id="termsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4"><div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"><div class="flex justify-between items-center p-6 border-b border-slate-200"><h3 class="text-2xl font-bold text-navy-900">Términos de Servicio</h3><button onclick="closeModal('termsModal')" class="text-slate-500 hover:text-slate-700 transition-colors"><i class="fas fa-times text-2xl"></i></button></div><div class="p-6 overflow-y-auto max-h-[calc(90vh-100px)]"><iframe src="img/socios/terminos-servicio.pdf" class="w-full h-[60vh] rounded-lg border border-slate-200" title="Términos de Servicio"></iframe><div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200"><p class="text-sm text-blue-800 font-semibold mb-1">Nota:</p><p class="text-sm text-blue-700">Si el documento no se visualiza, puede solicitarlo directamente a fiscallegalconsultores@gmail.com</p></div></div></div></div>
+    <!-- MODAL: Aviso de Privacidad -->
+    <div id="privacyModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+            <div class="flex justify-between items-center p-6 border-b border-slate-200">
+                <h3 class="text-2xl font-bold text-navy-900">Aviso de Privacidad</h3>
+                <button onclick="closeModal('privacyModal')" class="text-slate-500 hover:text-slate-700 transition-colors"><i class="fas fa-times text-2xl"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
+                <iframe src="img/socios/aviso-privacidad.pdf" class="w-full h-[60vh] rounded-lg border border-slate-200" title="Aviso de Privacidad"></iframe>
+                <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="text-sm text-blue-800 font-semibold mb-1">Nota:</p>
+                    <p class="text-sm text-blue-700">Si el documento no se visualiza, puede solicitarlo directamente a fiscallegalconsultores@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- MODAL: Términos de Servicio -->
+    <div id="termsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+            <div class="flex justify-between items-center p-6 border-b border-slate-200">
+                <h3 class="text-2xl font-bold text-navy-900">Términos de Servicio</h3>
+                <button onclick="closeModal('termsModal')" class="text-slate-500 hover:text-slate-700 transition-colors"><i class="fas fa-times text-2xl"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
+                <iframe src="img/socios/terminos-servicio.pdf" class="w-full h-[60vh] rounded-lg border border-slate-200" title="Términos de Servicio"></iframe>
+                <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="text-sm text-blue-800 font-semibold mb-1">Nota:</p>
+                    <p class="text-sm text-blue-700">Si el documento no se visualiza, puede solicitarlo directamente a fiscallegalconsultores@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script src="main.js"></script>
 </body>
 </html>
