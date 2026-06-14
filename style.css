@@ -18,9 +18,9 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
 .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
 
-/* FAQ Accordion - CORREGIDO */
+/* FAQ Accordion */
 .faq-content {
-    display: none; /* Oculto por defecto */
+    display: none;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
     max-height: 0;
     opacity: 0;
@@ -29,8 +29,8 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 }
 
 .faq-content.active {
-    display: block; /* Visible cuando está activo */
-    max-height: 800px; /* Aumentado para respuestas largas */
+    display: block;
+    max-height: 1200px;
     opacity: 1;
     padding-top: 1rem;
 }
@@ -39,7 +39,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     transform: rotate(180deg);
 }
 
-/* Circular content (para las tarjetas de Actualidad) */
+/* Circular content */
 .circular-content {
     display: none;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
@@ -51,7 +51,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
 .circular-content.active {
     display: block;
-    max-height: 600px;
+    max-height: 800px;
     opacity: 1;
     padding-top: 1rem;
 }
@@ -72,45 +72,24 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     left: 0;
 }
 
-/* Scrollbar personalizado */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0F172A;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #1D4ED8;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #1E40AF;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0F172A; }
+::-webkit-scrollbar-thumb { background: #1D4ED8; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #1E40AF; }
 
 /* Selection */
-::selection {
-    background: #1D4ED8;
-    color: #FFFFFF;
-}
+::selection { background: #1D4ED8; color: #FFFFFF; }
 
-/* Checkbox personalizado */
-input[type="checkbox"] {
-    cursor: pointer;
-}
+/* Checkbox */
+input[type="checkbox"] { cursor: pointer; }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .faq-content.active {
-        max-height: 1000px; /* Más espacio en móvil para respuestas largas */
-    }
+    .faq-content.active { max-height: 1500px; }
 }
 
 /* Print */
 @media print {
-    nav, footer, .faq-trigger i, button, .fixed {
-        display: none;
-    }
+    nav, footer, .faq-trigger i, button, .fixed { display: none; }
 }

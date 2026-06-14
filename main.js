@@ -1,5 +1,6 @@
-// main.js
+// main.js - FLC Abogados Tributarios
 document.addEventListener('DOMContentLoaded', function() {
+    
     // MENÚ MÓVIL
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // FAQ ACCORDION - CORREGIDO
+    // FAQ ACCORDION
     const faqTriggers = document.querySelectorAll('.faq-trigger');
 
     faqTriggers.forEach(trigger => {
@@ -39,10 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const icon = this.querySelector('i');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
-            // Alternar estado
             this.setAttribute('aria-expanded', !isExpanded);
             
-            // IMPORTANTE: Alternar clase 'active' Y 'hidden' de Tailwind
             if (!isExpanded) {
                 content.classList.add('active');
                 content.classList.remove('hidden');
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.style.transform = !isExpanded ? 'rotate(180deg)' : 'rotate(0)';
             }
             
-            // Cerrar otros FAQs abiertos
             faqTriggers.forEach(otherTrigger => {
                 if (otherTrigger !== trigger) {
                     const otherContent = otherTrigger.nextElementSibling;
@@ -71,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // FUNCIONALIDAD PARA LAS CIRCULARES DE ACTUALIDAD - CORREGIDO
+    // CIRCULARES DE ACTUALIDAD
     const circularBtns = document.querySelectorAll('.leer-circular-btn');
 
     circularBtns.forEach(btn => {
@@ -83,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const isVisible = circularContent && circularContent.classList.contains('active');
             
-            // Cerrar todas las demás circulares
             document.querySelectorAll('.circular-content').forEach(content => {
                 if (content !== circularContent && content.classList.contains('active')) {
                     content.classList.remove('active');
@@ -95,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Alternar estado de la actual
             if (circularContent) {
                 if (!isVisible) {
                     circularContent.classList.add('active');
@@ -147,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // FORMSPREE FORM SUBMISSION (AJAX)
+    // FORMSPREE FORM SUBMISSION
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
@@ -175,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     const data = await response.json();
                     const errorMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Error desconocido';
-                    alert('⚠️ Hubo un problema al enviar el mensaje: ' + errorMsg + '\n\nPor favor, intente nuevamente o contáctenos directamente por WhatsApp.');
+                    alert('️ Hubo un problema al enviar el mensaje: ' + errorMsg + '\n\nPor favor, intente nuevamente o contáctenos directamente por WhatsApp.');
                 }
             } catch (error) {
                 alert('⚠️ Error de conexión. Por favor, verifique su internet o contáctenos directamente por WhatsApp.');
@@ -239,7 +235,6 @@ function closeModal(modalId) {
     }
 }
 
-// Cerrar modal al hacer clic fuera del contenido
 window.addEventListener('click', function(e) {
     if (e.target.classList.contains('fixed')) {
         e.target.classList.add('hidden');
