@@ -1,7 +1,6 @@
 /* ========================================
    FLC Abogados Tributarios - style.css
    ======================================== */
-
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
@@ -19,8 +18,9 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
 .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
 
-/* FAQ Accordion */
+/* FAQ Accordion - CORREGIDO */
 .faq-content {
+    display: none; /* Oculto por defecto */
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
     max-height: 0;
     opacity: 0;
@@ -29,7 +29,8 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 }
 
 .faq-content.active {
-    max-height: 500px;
+    display: block; /* Visible cuando está activo */
+    max-height: 800px; /* Aumentado para respuestas largas */
     opacity: 1;
     padding-top: 1rem;
 }
@@ -40,6 +41,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
 /* Circular content (para las tarjetas de Actualidad) */
 .circular-content {
+    display: none;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     max-height: 0;
     opacity: 0;
@@ -48,7 +50,8 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 }
 
 .circular-content.active {
-    max-height: 500px;
+    display: block;
+    max-height: 600px;
     opacity: 1;
     padding-top: 1rem;
 }
@@ -101,7 +104,7 @@ input[type="checkbox"] {
 /* Responsive */
 @media (max-width: 768px) {
     .faq-content.active {
-        max-height: 600px;
+        max-height: 1000px; /* Más espacio en móvil para respuestas largas */
     }
 }
 
