@@ -1,10 +1,9 @@
 // main.js
 document.addEventListener('DOMContentLoaded', function() {
-    
     // MENÚ MÓVIL
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
@@ -30,28 +29,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // FAQ ACCORDION
+
+    // FAQ ACCORDION - CORREGIDO
     const faqTriggers = document.querySelectorAll('.faq-trigger');
-    
+
     faqTriggers.forEach(trigger => {
         trigger.addEventListener('click', function() {
             const content = this.nextElementSibling;
             const icon = this.querySelector('i');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
+            // Alternar estado
             this.setAttribute('aria-expanded', !isExpanded);
-            content.classList.toggle('active', !isExpanded);
+            
+            // IMPORTANTE: Alternar clase 'active' Y 'hidden' de Tailwind
+            if (!isExpanded) {
+                content.classList.add('active');
+                content.classList.remove('hidden');
+            } else {
+                content.classList.remove('active');
+                content.classList.add('hidden');
+            }
+            
             if (icon) {
                 icon.style.transform = !isExpanded ? 'rotate(180deg)' : 'rotate(0)';
             }
             
+            // Cerrar otros FAQs abiertos
             faqTriggers.forEach(otherTrigger => {
                 if (otherTrigger !== trigger) {
                     const otherContent = otherTrigger.nextElementSibling;
                     const otherIcon = otherTrigger.querySelector('i');
                     otherTrigger.setAttribute('aria-expanded', 'false');
                     otherContent.classList.remove('active');
+                    otherContent.classList.add('hidden');
                     if (otherIcon) {
                         otherIcon.style.transform = 'rotate(0)';
                     }
@@ -59,25 +70,24 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
-    // NUEVA FUNCIONALIDAD PARA LAS CIRCULARES DE ACTUALIDAD
+
+    // FUNCIONALIDAD PARA LAS CIRCULARES DE ACTUALIDAD - CORREGIDO
     const circularBtns = document.querySelectorAll('.leer-circular-btn');
-    
+
     circularBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            // Buscar el contenido de la circular dentro del mismo artículo
             const article = this.closest('article');
             const circularContent = article.querySelector('.circular-content');
             const icon = this.querySelector('i');
             
-            // Verificar si este contenido ya está visible
             const isVisible = circularContent && circularContent.classList.contains('active');
             
-            // Cerrar todas las demás circulares abiertas
+            // Cerrar todas las demás circulares
             document.querySelectorAll('.circular-content').forEach(content => {
                 if (content !== circularContent && content.classList.contains('active')) {
                     content.classList.remove('active');
+                    content.classList.add('hidden');
                     const otherBtn = content.closest('article')?.querySelector('.leer-circular-btn i');
                     if (otherBtn) {
                         otherBtn.style.transform = 'rotate(0)';
@@ -85,16 +95,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Cambiar el estado de la actual
+            // Alternar estado de la actual
             if (circularContent) {
-                circularContent.classList.toggle('active');
+                if (!isVisible) {
+                    circularContent.classList.add('active');
+                    circularContent.classList.remove('hidden');
+                } else {
+                    circularContent.classList.remove('active');
+                    circularContent.classList.add('hidden');
+                }
                 if (icon) {
-                    icon.style.transform = circularContent.classList.contains('active') ? 'rotate(90deg)' : 'rotate(0)';
+                    icon.style.transform = !isVisible ? 'rotate(90deg)' : 'rotate(0)';
                 }
             }
         });
     });
-    
+
     // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -130,10 +146,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // FORMSPREE FORM SUBMISSION (AJAX)
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -169,13 +185,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // ANIMACIONES ON-SCROLL
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -184,11 +200,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     document.querySelectorAll('.animate-fade-in').forEach(el => {
         observer.observe(el);
     });
-    
+
     // NAVBAR SCROLL EFFECT
     const navbar = document.getElementById('navbar');
     if (navbar) {
