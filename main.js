@@ -1,10 +1,9 @@
 // main.js - FLC Abogados Tributarios
 document.addEventListener('DOMContentLoaded', function() {
-    
     // MENÚ MÓVIL
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-
+    
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.classList.toggle('fa-times');
             }
         });
-        
+
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.add('hidden');
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // FAQ ACCORDION
     const faqTriggers = document.querySelectorAll('.faq-trigger');
-
     faqTriggers.forEach(trigger => {
         trigger.addEventListener('click', function() {
             const content = this.nextElementSibling;
@@ -53,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (icon) {
                 icon.style.transform = !isExpanded ? 'rotate(180deg)' : 'rotate(0)';
             }
-            
+
+            // Cerrar otros FAQs
             faqTriggers.forEach(otherTrigger => {
                 if (otherTrigger !== trigger) {
                     const otherContent = otherTrigger.nextElementSibling;
@@ -71,16 +70,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // CIRCULARES DE ACTUALIDAD
     const circularBtns = document.querySelectorAll('.leer-circular-btn');
-
     circularBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             const article = this.closest('article');
             const circularContent = article.querySelector('.circular-content');
             const icon = this.querySelector('i');
-            
             const isVisible = circularContent && circularContent.classList.contains('active');
-            
+
+            // Cerrar otros circulares
             document.querySelectorAll('.circular-content').forEach(content => {
                 if (content !== circularContent && content.classList.contains('active')) {
                     content.classList.remove('active');
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
-            
+
             if (circularContent) {
                 if (!isVisible) {
                     circularContent.classList.add('active');
@@ -100,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     circularContent.classList.remove('active');
                     circularContent.classList.add('hidden');
                 }
+                
                 if (icon) {
                     icon.style.transform = !isVisible ? 'rotate(90deg)' : 'rotate(0)';
                 }
@@ -112,22 +111,21 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
             if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
                 const navbar = document.getElementById('navbar');
                 const navbarHeight = navbar ? navbar.offsetHeight : 100;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 10;
-                
+
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
-                
+
+                // Cerrar menú móvil si está abierto
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                     if (mobileMenuBtn) {
@@ -145,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // FORMSPREE FORM SUBMISSION
     const contactForm = document.getElementById('contactForm');
-
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -155,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
-            
+
             try {
                 const response = await fetch(this.action, {
                     method: 'POST',
@@ -164,14 +161,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Accept': 'application/json'
                     }
                 });
-                
+
                 if (response.ok) {
                     alert('✓ Gracias por contactar a FLC Abogados Tributarios. Hemos recibido su solicitud y un especialista se comunicará con usted en menos de 24 horas hábiles.');
                     this.reset();
                 } else {
                     const data = await response.json();
                     const errorMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Error desconocido';
-                    alert('️ Hubo un problema al enviar el mensaje: ' + errorMsg + '\n\nPor favor, intente nuevamente o contáctenos directamente por WhatsApp.');
+                    alert('⚠️ Hubo un problema al enviar el mensaje: ' + errorMsg + '\n\nPor favor, intente nuevamente o contáctenos directamente por WhatsApp.');
                 }
             } catch (error) {
                 alert('⚠️ Error de conexión. Por favor, verifique su internet o contáctenos directamente por WhatsApp.');
@@ -213,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbar.classList.add('bg-white/95');
             }
         };
+
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
     }
@@ -235,6 +233,7 @@ function closeModal(modalId) {
     }
 }
 
+// Cerrar modal al hacer click fuera
 window.addEventListener('click', function(e) {
     if (e.target.classList.contains('fixed')) {
         e.target.classList.add('hidden');
