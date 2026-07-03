@@ -1,137 +1,43 @@
-/* ========================================
-   FLC Abogados Tributarios - style.css
-======================================== */
+/* style.css */
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
-html {
-    scroll-behavior: smooth;
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #B89628 100%);
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #B89628 0%, #A3851F 100%);
+  transform: translateY(-1px);
 }
 
-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+.accordion-content {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.accordion-content.active {
+  max-height: 600px;
+  opacity: 1;
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+  border-color: #D4AF37;
 }
 
-@keyframes bounce-slow {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+.rotate-180 { transform: rotate(180deg); }
+
+.fade-in { animation: fadeIn 0.6s ease-out; }
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(20px); } 
+  to { opacity: 1; transform: translateY(0); } 
 }
 
-.animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
-}
-
-/* FAQ Accordion */
-.faq-content {
-    display: none;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
-    max-height: 0;
-    opacity: 0;
-    padding-top: 0;
-    overflow: hidden;
-}
-
-.faq-content.active {
-    display: block;
-    max-height: 1200px;
-    opacity: 1;
-    padding-top: 1rem;
-}
-
-.faq-trigger[aria-expanded="true"] i {
-    transform: rotate(180deg);
-}
-
-/* Circular content */
-.circular-content {
-    display: none;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    padding: 0;
-}
-
-.circular-content.active {
-    display: block;
-    max-height: 800px;
-    opacity: 1;
-    padding-top: 1rem;
-}
-
-/* Aspect Ratio */
-.aspect-w-4 {
-    position: relative;
-    padding-bottom: 75%;
-}
-
-.aspect-w-4 > * {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0F172A;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #1D4ED8;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #1E40AF;
-}
-
-/* Selection */
-::selection {
-    background: #1D4ED8;
-    color: #FFFFFF;
-}
-
-/* Checkbox */
-input[type="checkbox"] {
-    cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .faq-content.active {
-        max-height: 1500px;
-    }
-}
-
-/* Print */
-@media print {
-    nav, footer, .faq-trigger i, button, .fixed {
-        display: none;
-    }
+.partner-card { transition: all 0.3s ease; }
+.partner-card:hover { 
+  border-color: #D4AF37; 
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); 
 }
