@@ -1,84 +1,95 @@
 /* ========================================
-FLC Abogados Tributarios - style.css
-======================================== */
+   FLC Abogados Tributarios - style.css
+   ======================================== */
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
 /* Animaciones */
 @keyframes fadeIn {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes bounce-slow {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
+
 .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
 .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+
 /* FAQ Accordion */
 .faq-content {
-display: none;
-transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
-max-height: 0;
-opacity: 0;
-padding-top: 0;
-overflow: hidden;
+    display: none;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    overflow: hidden;
 }
+
 .faq-content.active {
-display: block;
-max-height: 1200px;
-opacity: 1;
-padding-top: 1rem;
+    display: block;
+    max-height: 1200px;
+    opacity: 1;
+    padding-top: 1rem;
 }
+
 .faq-trigger[aria-expanded="true"] i {
-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
+
 /* Circular content */
 .circular-content {
-display: none;
-transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-max-height: 0;
-opacity: 0;
-overflow: hidden;
-padding: 0;
+    display: none;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
 }
+
 .circular-content.active {
-display: block;
-max-height: 800px;
-opacity: 1;
-padding-top: 1rem;
+    display: block;
+    max-height: 800px;
+    opacity: 1;
+    padding-top: 1rem;
 }
+
 /* Aspect Ratio */
 .aspect-w-4 {
-position: relative;
-padding-bottom: 75%;
+    position: relative;
+    padding-bottom: 75%;
 }
+
 .aspect-w-4 > * {
-position: absolute;
-height: 100%;
-width: 100%;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #0F172A; }
 ::-webkit-scrollbar-thumb { background: #1D4ED8; border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: #1E40AF; }
+
 /* Selection */
 ::selection { background: #1D4ED8; color: #FFFFFF; }
+
 /* Checkbox */
 input[type="checkbox"] { cursor: pointer; }
+
 /* Responsive */
 @media (max-width: 768px) {
-.faq-content.active { max-height: 1500px; }
+    .faq-content.active { max-height: 1500px; }
 }
+
 /* Print */
 @media print {
-nav, footer, .faq-trigger i, button, .fixed { display: none; }
-}
-/* Socio cards - eliminar espacio vacío al quitar cédula */
-.socio-card p {
-    margin-bottom: 0.5rem;
+    nav, footer, .faq-trigger i, button, .fixed { display: none; }
 }
